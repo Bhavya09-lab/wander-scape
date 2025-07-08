@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WanderScape - Travel Blog</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
@@ -20,7 +22,7 @@
 
       color: #333;
     }
-
+   
     nav a {
   position: relative;
   padding: 0.6rem 1.2rem;
@@ -157,39 +159,46 @@ nav a:hover::after {
 }
     
     header {
-      position: relative;
-      height: 90vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      border-radius: 850px;
-      cursor: pointer;;
-    }
-
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border-radius: 0px; /* remove or reduce for mobile */
+  cursor: pointer;
+  padding: 0 1rem;
+}
     
 
-    header .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7));
-      z-index: 1;
-      cursor: pointer;
-    }
-
+    
    header h1 {
-  font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   padding: 1rem 2rem;
   z-index: 1;
-  position: relative;
   background-color: rgba(16, 63, 24, 0.5);
-  border-radius: 850px;
-  cursor: pointer;
+  border-radius: 25px;
+  max-width: 90%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 60vh;
+    border-radius: 0;
+  }
+
+ 
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
 }
 
 
@@ -219,13 +228,14 @@ nav a:hover::after {
 
     .card {
       background: white;
-      border-radius: 150px;
+      border-radius: 50px;
       
       overflow: hidden;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       position: relative;
       text-decoration: none;
       color: inherit;
+      cursor: pointer;
     }
 
     .card:hover {
@@ -275,6 +285,30 @@ nav a:hover::after {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 114, 255, 0.3);
 }
+header .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7));
+  z-index: 1;
+  padding: 0 1rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.5rem;
+  padding: 1.2rem 2rem;
+  z-index: 2;
+  background-color: rgba(16, 63, 24, 0.6);
+  border-radius: 25px;
+  max-width: 90%;
+  text-align: center;
+  line-height: 1.4;
+}
+
 
     .card-content {
       background-color: #fff;
@@ -317,12 +351,7 @@ nav a:hover::after {
   z-index: 2000;
   transition: width 0.25s ease;
 }
-.overlay {
-  
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 4rem;
-}
+
 .slideshow-header {
   transition: background-image 0.5s ease-in-out;
 }
@@ -349,9 +378,6 @@ body.dark-theme .card {
   color: white;
 }
 
-.overlay {
-  background-color: rgba(249, 245, 245, 0.6);
-}
 
 nav input[type="text"] {
   padding: 0.5rem 1.2rem;
@@ -378,47 +404,154 @@ nav input[type="text"]:focus {
   display: inline-block;
   font-weight: bold;
 }
-.explore-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.4rem;
-  background: linear-gradient(to right, #d35ca3, #c32370);
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 114, 255, 0.3);
+@media (max-width: 500px) {
+  .card-content p {
+    font-size: 0.9rem;
+  }
+  .explore-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
+.explore-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff6b6b, #f06595);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
 .explore-btn:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, #a4be2f, #57a707);
-  box-shadow: 0 8px 16px rgba(2, 53, 11, 0.4);
+  background: linear-gradient(135deg, #36ab13, #164d06);
 }
-.card-content .explore-btn {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
 }
-.card:hover .explore-btn {
-  opacity: 1;
+
+/* Desktop default (already applied) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .logo {
+    margin-bottom: 1rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    padding: 0.6rem 1rem;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  #contact .contact-icon {
+    font-size: 1rem;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+  }
+}
+
+
+
+.card .explore-btn {
+  display: inline-block;
 }
 
 
 .hero-button:hover {
   background: #218838;
 }
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+
+  .nav-links.show {
+    display: flex;
+  }
+}
 
 
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .section {
-        padding: 2rem 1rem;
-      }
-    }
+    @media (max-width: 768px) {
+  .destinations {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    border-radius: 20px;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card img, .card video {
+    height: auto;
+    max-height: 200px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -443,18 +576,23 @@ nav input[type="text"]:focus {
 
   <nav>
   <div class="logo">WanderScape</div>
-  <div class="nav-links" style="display: flex; align-items: center; gap: 1rem;">
+
+  <!-- 🔥 KEEP THIS OUTSIDE .nav-links -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="nav-links">
     <a href="#home"> Home</a>
     <a href="#destinations"> Destinations</a>
     <a href="#blog"> Blog</a>
     <a href="#contact"> Contact</a>
     <a href="culture.html"> Culture</a>
     <a href="#" id="theme-toggle"><i class="fas fa-moon"></i> Theme</a>
-    <input type="text" id="searchInput" placeholder="Search destinations..." style="padding: 0.5rem 1rem; border-radius: 25px; border: 1px solid #ccc; outline: none; font-size: 1rem;">
-
-
+    <input type="text" id="searchInput" placeholder="Search destinations...">
   </div>
 </nav>
+
 
   <header class="slideshow-header" id="header">
   <div class="overlay">
@@ -817,7 +955,17 @@ gsap.from("body", {
       });
     });
   </script>
-  
+  <script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('show');
+      const icon = document.querySelector('.menu-icon i');
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-times');
+    });
+  });
+</script>
+
   <script>
   document.getElementById("searchInput").addEventListener("keyup", function () {
     const filter = this.value.toLowerCase();
@@ -896,7 +1044,28 @@ gsap.from("body", {
       }
     });
   });
+  
 </script>
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const icon = document.querySelector('.menu-icon i');
+    
+    navLinks.classList.toggle('show');
+
+    // Toggle icon between bars and close (hamburger ↔ X)
+    if (navLinks.classList.contains('show')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  }
+</script>
+
+
+
 
 </body>
 </html>

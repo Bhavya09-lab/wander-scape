@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kutch – Gujarat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      color: black;
+      background: url('https://skysafar.in/wp-content/uploads/2024/06/Kutch.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(255,255,255,0.75);
+      z-index: -1;
+    }
+
+    h1 {
+      color: #2a5d84;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .full-width-image img {
+      width: 60%;
+      border-radius: 90px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .full-width-image :hover{
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+    p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+    
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #fff;
+      background-color: #2a5d84;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #184d6b;
+    }
+
+    h2 {
+      margin-top: 3rem;
+      color: black;
+      text-align: center;
+    }
+
+    .attraction {
+      margin-bottom: 2.5rem;
+      background: rgba(255,255,235,0.9);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .attraction:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .attraction h3 {
+      margin-bottom: 0.5rem;
+      color: #2a5d84;
+    }
+
+    .attraction img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+@media (max-width: 768px) {
+  .attraction {
+    display: block;
+    text-align: center;
+  }
+
+  .attraction img {
+    float: none;
+    margin: 0 auto 1rem;
+  }
+
+  .attraction div {
+    padding: 0 1rem;
+  }
+}
+
+
+    .attraction:hover img {
+  transform: scale(1.05);
+  cursor: zoom-in; /* This is the new line you need */
+}
+.attraction img {
+  cursor: zoom-in;
+}
+.popular-song {
+  background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+  border-radius: 30px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-song:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.song-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2a5d84;
+  margin-bottom: 0.3rem;
+}
+
+.song-artist {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.listen-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2a5d84;
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.listen-button:hover {
+  background-color: #184d6b;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+    .attraction::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    @keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+    .map-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background:olive;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .map-button:hover {
+      background: #c0554b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The White Desert Wonderland</h1>
+  <div class="full-width-image">
+    <img src="https://avathioutdoors.gumlet.io/travelGuide/dev/bhuj_P1959.jpg?format=webp&w=600&dpr=2.6" alt="Kutchh">
+    <p>“Witness the breathtaking expanse of the Rann, explore rich handicrafts, and dive into Gujarat’s vibrant tribal culture in Kutch.”</p>
+  </div>
+
+  <h2>Major attractions include:</h2>
+
+  <div class="attraction">
+    <h3>Kalo Dungar (Black Hill)</h3>
+    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/kalo-dungar-the-black-hills-kutch-gujarat-2-attr-hero?qlt=82&ts=1726734154059" alt="Kalo Dungar">
+    <p>Located near the Indo-Pak border, Kalo Dungar offers panoramic views of the endless white desert. It is also home to the Dattatreya Temple, and nearby is a mysterious magnetic hill, where vehicles appear to defy gravity.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/aRuesdct9eRZymhv8" target="_blank">Google Map</a>
+  </div>
+
+  <div class="attraction">
+    <h3>Bhuj</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Chhatedi_of_Bhuj.jpg/330px-Chhatedi_of_Bhuj.jpg" alt="Bhuj">
+    <p>Bhuj is a vibrant city filled with history, palaces, museums, and colorful bazaars.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/EZJSmqkbfvfnFhAV8" target="_blank">Google Map</a>
+  </div>
+
+  <div class="attraction">
+    <h3>Mandvi Beach</h3>
+    <img src="https://media.assettype.com/outlooktraveller%2F2025-04-22%2Fjx99e84o%2FMandvi-Beach.jpg?w=640&auto=format%2Ccompress" alt="mandvi beach">
+    <p>Mandvi is a peaceful beach town on the Arabian Sea. The Vijay Vilas Palace, a summer residence of the Kutch royal family, is nearby and has been featured in Bollywood movies. The clean beach, windmills, and camel rides make Mandvi a serene getaway.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/Tbjhm2DU7GwEhuBW9" target="_blank">Google Map</a>
+  </div>
+
+  <div class="attraction">
+    <h3>Dholavira</h3>
+    <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/indus-valley-civilization-sites/dholavira/Dholavira-Banner.jpg" alt="Dholavira">
+    <p>Dholavira is one of the most remarkable and well-preserved archaeological sites of the Harappan era. Located in the Khadir Bet island of the Rann, it showcases advanced town planning, drainage systems, and a unique water conservation system. It’s now a UNESCO World Heritage Site.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/U1URjSLueNTpc3ak9" target="_blank">Google Map</a>
+  </div>
+<section class="section" id="kutchh">
+  <h2 data-aos="fade-up"><center>Culture & Traditions of Kutchh</center></h2>
+
+  <!-- Embedded YouTube video -->
+  <div style="
+  max-width: 400px;
+  aspect-ratio: 9/16;
+  margin: 0 auto 2rem auto;
+  border-radius: 75px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+">
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/RVFR_69pAZ8"
+    title="YouTube Shorts"
+    frameborder="0"
+    style="border: none;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+  <!-- Culture description -->
+  <div class="card" style="max-width: 900px; margin: 2rem auto;" data-aos="fade-up" data-aos-delay="200">
+    <div class="card-content">
+      <h3>Spiritual Essence</h3>
+      <p>Sacred Geography and Pilgrimage:
+Kutchh is dotted with ancient temples and shrines, many located in remote, serene natural settings—from the White Desert to rocky hills.
+Notable spiritual places include:Mata No Madh: Dedicated to Ashapura Mata, the Kuldevi of the Jadeja rulers. Devotees walk miles barefoot during Navratri.
+Narayan Sarovar & Koteshwar Temple: One of the five sacred lakes in Hinduism, associated with Lord Vishnu and Shiva.
+Dattatreya Temple on Kalo Dungar: Where devotees experience both mysticism and panoramic desert views.</p>
+<p>Devotion through Simplicity:
+The arid landscape teaches detachment from materialism, and the communities emphasize minimalism, hospitality, and humility—all seen as spiritual virtues.
+Many villagers live by a code of seva (service), bhakti (devotion), and satya (truth) rooted in folk religion.
+</p>
+<p> Folk Deities and Local Faith
+Besides major Hindu gods, Kutchh reveres many regional and pastoral deities, like:Vachhara Dada (protector of cattle)
+Meldi Maa, Momai Maa, and Nag Bhuva
+These deities represent protection, fertility, rain, and justice, showing how faith is connected to daily survival and nature.
+</p>
+
+      <h3>Festivals</h3>
+      <div class="attraction">
+    <img src="https://www.ghumney.com/uploads/0000/19/2021/09/09/rann-of-kutch-festival.jpg" alt="kutchh">
+    <div>
+      <p>1. Rann Utsav
+When: November to February (Full Moon nights are most popular)
+Where: White Rann of Kutch, Dhordo village
+What:A government-organized desert carnival
+Folk dances, camel safaris, music, adventure sports, shopping, and night stays in tents
+Celebrates Kutchh’s art, crafts, cuisine, and cultural harmony
+Why: To showcase the spiritual beauty of the desert and Kutchhi identity to the world
+</p>
+
+<p>2.Ashapura Mata no Melo (Mata no Madh Fair)
+When: During Navratri (September–October)
+Where: Mata no Madh, the temple of Ashapura Mata
+What:Thousands of devotees (many barefoot) walk to the temple in a grand pilgrimage
+Devotional music, fasting, prayers, and fairs
+Why: Ashapura Mata is the kuldevi (clan goddess) of the Jadeja rulers and many Kutchhi communities
+
+</p>
+<p>
+3. Navratri Festival
+When: September–October
+Where: Across Kutchh (especially Bhuj and villages)
+What:Garba and Dandiya Raas dances every night
+Worship of Ambe Maa, Ashapura Mata, and other local goddesses
+Women wear traditional embroidered attire with mirror work
+Why: To celebrate feminine divine power and the victory of good over evil
+</p>
+    </div>
+      </div>
+      <h3>Local Customs</h3>
+      <p>  1. Living in Bhungas:
+Bhungas are traditional circular mud houses with conical roofs.
+They are earthquake-resistant and climate-friendly.
+Decorated with Lippan Kaam (mirror and mud art), they reflect artistic and spiritual pride.
+Guests are greeted warmly, often with buttermilk or sweets as a sign of hospitality.</p>
+
+<p> Handicrafts as Sacred Tradition:
+Kutchhi women create intricate embroidery, mirror work, and textiles during festivals and weddings.
+Crafts are often offered to deities, used in dowries, and passed down generations.
+Men practice Rogan painting, wood carving, and bell-making, linked with divine inspiration.</p>
+
+<p>3. Worship of Folk Deities
+Alongside mainstream gods, locals worship regional deities like:
+Ashapura Mata – goddess of justice and protection
+Momai Maa, Nag Bhuva, and Vachhara Dada – cattle protectors and tribal guardians
+Pilgrimages and barefoot yatras to temples like Mata no Madh are common.
+</p>
+
+<div style="margin-top: 3rem; text-align: center;">
+  <h3 style="color: #2a5d84;">🎵 Popular Songs of Kutchh</h3>
+
+  <div class="popular-song">
+    <div class="song-title">🎧 Maiyar Ma Mandu Nathi Lagtu</div>
+    <div class="song-artist">Artist: Hansha patel</div>
+    <p>Genre: Wedding Folk · Theme: Emotional connection to home</p>
+    <a href="https://www.jiosaavn.com/song/maiyar-ma-mandu-nathi-lagatu/PQkdZgR1UXk" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+
+
+  <div class="popular-song">
+    <div class="song-title">Mor Bani Thanghat Kare</div>
+    <div class="song-artist">Artist: Aditya Gadhavi</div>
+    <p>Genre: Traditional Folk · Theme: Nature and joy</p>
+    <a href="https://www.jiosaavn.com/song/mor-bani-thanghat-kare-feat.-aditya-gadhvi-garba-medley-feat.-aditya-gadhvi-live/RCA8fBxAZkQ" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+
+  <div class="popular-song">
+    <div class="song-title"> Tari Aankh No Afini</div>
+    <div class="song-artist">Artist: Aditya Gadhavi</div>
+    <p>Genre: Romantic Folk · Theme: Love and longing</p>
+    <a href="https://www.jiosaavn.com/lyrics/tari-ankhno-afini-lyrics/EQstSRBmVAA" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+  <div class="popular-song">
+    <div class="song-title"> Vaagyo re dhol</div>
+    <div class="song-artist">Artist: Bhoomi trivedi</div>
+    <a href="https://www.jiosaavn.com/song/vaagyo-re-dhol/PQU-UAFScnU" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+</div>
+</section>
+  <a href="index.html">← Back to Main Page</a>
+
+</body>
+</html>

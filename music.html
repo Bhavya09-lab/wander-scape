@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Melodies of Gujarat - WanderScape</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to right, #fff8e1, #ffe0b2); /* creamy gradient */
+  color: #333;
+  scroll-behavior: smooth;
+}
+    header {
+  background: linear-gradient(to right, rgba(181, 186, 102, 0.9), white), 
+              url('https://blogbox.indianeagle.com/wp-content/uploads/2013/11/folk-music-in-rann-utsav-of-gujarat.jpg') center/cover no-repeat;
+  color: black;
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  animation: slideInTop 1s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+    .card img {
+  cursor: pointer;
+}
+
+.card img:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+
+    header h1 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      padding: 2 1rem;
+    }
+
+    header video {
+      border-radius: 300px;
+      height: 400px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      width: 50%;
+    }
+
+    header video:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .city-music {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 150px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+  object-fit: contain;
+  height: 250px;
+  width: 100%;
+  padding: 10px;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+}
+
+    .card img:hover {
+      transform: scale(1.03);
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      color: #d55b2b;
+      margin-bottom: 0.5rem;
+    }
+
+    
+    .ripple-click {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 193, 7, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripple-animation 0.6s ease-out;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+@keyframes ripple-animation {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+
+    
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#scrollBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #ff9800;
+    z-index: 999;
+    transition: width 0.2s ease-out;
+  }
+.card:hover {
+  animation: floatCard 0.6s ease-in-out infinite;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.9);
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    animation: zoom 0.6s ease;
+  }
+  @keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .listen-btn {
+  background-color: #9e0c0c;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 18px;
+  margin-top: 10px;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.listen-btn:hover {
+  background-color:rgb(26, 195, 178);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.full-width-image img {
+      width: 50%;
+      height: auto;
+      border-radius: 650px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .full-width-image img:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color:rgb(134, 185, 23);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+  }
+  /* -------------------- RESPONSIVE DESIGN -------------------- */
+
+/* Tablet & smaller laptops */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 2.4rem;
+  }
+  header video {
+    width: 70%;
+    height: auto;
+  }
+  .full-width-image img {
+    width: 70%;
+    border-radius: 350px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  header {
+    padding: 2rem 1rem;
+    background-position: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .full-width-image img {
+    width: 90%;
+    border-radius: 250px;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .city-music {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+  }
+
+  .card {
+    border-radius: 30px;
+  }
+
+  .card img {
+    height: auto;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  .listen-btn {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 1.5rem 1rem;
+  }
+
+  #topBtn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .full-width-image img {
+    width: 95%;
+    border-radius: 200px;
+  }
+
+  .listen-btn {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+}
+
+    /* KEEP ALL STYLES SAME FROM YOUR ORIGINAL CODE */
+    /* ... (use the same style section as your original file) ... */
+  </style>
+</head>
+<body>
+
+<div id="scrollBar"></div>
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<header>
+  <h1 data-aos="fade-down">Melodies of Gujarat – A Musical Journey</h1>
+  <div class="full-width-image">
+    <img src="https://i.pinimg.com/736x/f6/82/bb/f682bbe250795a30fc51878181391380.jpg" alt="music">
+  <p data-aos="fade-up">Gujarat’s music is deeply rooted in its folk traditions. From devotional Garba tunes in Vadodara to soulful Bhajans of Dwarka, every city offers a unique rhythm that echoes culture, tradition, and celebration.</p>
+  </div>
+</header>
+
+<section class="section" data-aos="fade-up">
+  <h1>Folk Singers of Gujarat</h1>
+  <div class="city-music">
+    <div class="card" data-aos="fade-up" data-aos-delay="0">
+      <img src="https://c.saavncdn.com/artists/Kirtidan_Gadhvi_005_20250320061127_500x500.jpg" alt="Kirtidan Gadhvi">
+      <div class="card-content">
+  <h3>Kirtidan Gadhvi</h3>
+  <p>One of Gujarat's most beloved folk singers, known for his powerful renditions of Dayro and Bhajans that stir deep emotions.</p>
+  <center><button class="listen-btn" data-src="https://pagallworld.co.in/dakor-na-thakor/">▶ Listen</button></center>
+</div>
+
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://i.scdn.co/image/ab6761610000e5ebd0bc4850fcd11d041429fdc6" alt="Geeta Rabari">
+      <div class="card-content">
+        <h3>Geeta Rabari</h3>
+        <p>Popularly known as the “Kutchi Koyal,” Geeta Rabari brings vibrant folk traditions to the youth through her soulful voice.</p>
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/4CKKoUN0iyrHBUNx6Xrnc8">▶ Listen</button></center>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOQjkWw4u3sR7AN5K7MuTsjXkHUIZe9sDnbA&s" alt="Jignesh Kaviraj">
+      <div class="card-content">
+        <h3>Jignesh Kaviraj</h3>
+        <p>A celebrated singer in Gujarati folk and DJ-style Garba fusion songs, widely loved across generations.</p>
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/7JF2zwOpFCh2gUxjr9YcxP">▶ Listen</button></center>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgmOz17OyVDBgR0Vas-Oy3whg1fq94r_FZQw&s" alt="Hemant Chauhan">
+      <div class="card-content">
+        <h3>Hemant Chauhan</h3>
+        <p>Renowned for his devotional and spiritual songs, Hemant Chauhan’s voice is a staple in temples and Gujarati households.</p>
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/6SLyfZLFgTmvDJh8XhzESU">▶ Listen</button></center>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="400">
+      <img src="https://img-mm.manoramaonline.com/content/dam/mm/mo/web-stories/movies/images/2023/4/2/ishani-dave-2.jpg" alt="Ishani Dave">
+      <div class="card-content">
+        <h3>Ishani Dave</h3>
+        <p>A youth sensation known for modern Garba hits, Ishani brings a contemporary flavor to traditional music styles.</p>
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/7w9TurSXldupOY4ZSF4e0K">▶ Listen</button></center>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="500">
+      <img src="https://usimg.sulekha.io/cdn/events/images/aishwarya-majmudar_2023-09-21-12-35-39-029_19.webp" alt="Aishwarya Majmudar">
+      <div class="card-content">
+        <h3>Aishwarya Majmudar</h3>
+        <p>Winner of multiple singing competitions, her voice ranges from classical to devotional to modern Gujarati film music.</p>
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/7MAlFea251zaprQFjwvYaL">▶ Listen</button></center>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="600">
+      <img src="https://pbs.twimg.com/profile_images/1257546716364111877/cg_IY5Lj_400x400.jpg" alt="Rajbha gadhavi">
+      <div class="card-content">
+        <h3>Rajbha gadhavi</h3>
+        <p>Veteran folk and Dayro performer, well-known for his satirical and spiritual storytelling through songs.</p>
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/0EzxlUqPTn6Gg2zlIfnUzy">▶ Listen</button></center>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="600">
+      <img src="https://images.jdmagicbox.com/events/A451152/A451152_list_20170203120427.jpg" alt="praful Dave">
+      <div class="card-content">
+        <h3>Praful Dave</h3>
+        <p>Veteran folk and Dayro performer, well-known for his satirical and spiritual storytelling through songs.</p>
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/63AYSaBUnGDb7g4SA6i5WU">▶ Listen</button></center>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="600">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Aditya_Gadhvi_At_An_Event_In_Ahmedabad_2020.jpg" alt="aditya gadhavi">
+      <div class="card-content">
+        <h3>Aditya gadhavi</h3>
+       <p>Aditya Gadhvi is a celebrated Gujarati singer and lyricist known for blending folk, Sufi, and devotional music with a modern twist. His hits like “Khalasi” and “Naagar Nandji Na Laal” have gained global recognition. A student of A.R. Rahman's conservatory, he has captivated audiences worldwide.</p>
+
+        <center><button class="listen-btn" data-src="https://open.spotify.com/artist/68BDWvc511MC0b6eAmH7gW">▶ Listen</button></center>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="audioModal" class="modal">
+  <span class="close" id="closeAudio">&times;</span>
+  <audio controls id="audioPlayer" style="display:block; margin: 100px auto; width: 80%; max-width: 600px;">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+
+
+<button id="topBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+<footer data-aos="fade-in">
+  <p>"In Gujarat, music is not just heard—it's felt."<br>
+     "From Garba nights to temple chants, every rhythm tells a story."<br>
+     &copy; 2025 WanderScape. All rights reserved.</p>
+</footer>
+
+<!-- SAME SCRIPTS AS BEFORE -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Music button logic
+
+
+document.getElementById("closeAudio").addEventListener("click", () => {
+  const modal = document.getElementById("audioModal");
+  const player = document.getElementById("audioPlayer");
+  player.pause();
+  player.currentTime = 0;
+  modal.style.display = "none";
+});
+
+  document.addEventListener("click", function (e) {
+    let ripple = document.createElement("span");
+    ripple.className = "ripple-click";
+    ripple.style.left = e.pageX + "px";
+    ripple.style.top = e.pageY + "px";
+    document.body.appendChild(ripple);
+    setTimeout(() => { ripple.remove(); }, 600);
+  });
+  const topBtn = document.getElementById("topBtn");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  };
+  topBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  document.querySelectorAll('.card img').forEach(img => {
+    img.addEventListener('click', function () {
+      document.getElementById('imgModal').style.display = "block";
+      document.getElementById('modalImg').src = this.src;
+    });
+  });
+  document.querySelector('.close').addEventListener('click', function () {
+    document.getElementById('imgModal').style.display = "none";
+  });
+  AOS.init({ duration: 1000, once: true });
+  window.addEventListener("scroll", () => {
+    const scroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scroll / height) * 100;
+    document.getElementById("scrollBar").style.width = scrolled + "%";
+  });
+  const singerColors = {
+    "Kirtidan Gadhvi": "#ffecb3",
+    "Geeta Rabari": "#fce4ec",
+    "Jignesh Kaviraj": "#e3f2fd",
+    "Hemant Chauhan": "#f3e5f5",
+    "Ishani Dave": "#fff3e0",
+    "Aishwarya Majmudar": "#ede7f6",
+    "Rajbha gadhavi": "#e8f5e9",
+    "Praful Dave": "#fffde7"
+  };
+
+  document.querySelectorAll(".listen-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const singerCard = button.closest(".card-content").querySelector("h3").textContent;
+      const color = singerColors[singerCard] || "#fff8e1"; // default
+
+      // Change body background
+      document.body.style.background = color;
+
+      // Open link in new tab (since it's an external music link)
+      const musicLink = button.getAttribute("data-src");
+      window.open(musicLink, '_blank');
+    });
+  });
+
+</script>
+
+</body>
+</html>

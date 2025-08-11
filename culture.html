@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gujarat Culture - WanderScape</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    body.dark-theme {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      border-radius: 12px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #0072ff;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff6a00, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+header {
+  height: 60vh;
+  border-radius: 0; /* Remove on mobile */
+}
+
+header img {
+  border-radius: 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 40vh;
+  }
+}
+.card img, .card-video {
+  height: auto;
+  max-height: 250px;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.card img, .card-video {
+  border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+  .culture {
+    grid-template-columns: 1fr;
+  }
+}
+
+   header {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 250px;
+}
+
+header img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  filter: brightness(60%);
+  border-radius: 250px;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.header-content h1 {
+  color: white;
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  padding: 0 1rem;
+
+}
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 600px) {
+  .header-content h1 {
+    font-size: 2rem;
+  }
+}
+
+    .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.culture {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+
+.card {
+  background: white;
+  border-radius: 150px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 150px;
+}
+
+body.dark-theme .card {
+  background: #1e1e1e;
+  color: #eee;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+.card-content {
+  padding-top: 1rem;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #0072ff;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      position: relative;
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      z-index: 2;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card-video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 150px;
+}
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #0072ff;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    /* Mobile Navigation Styles */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  nav div {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  nav div.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #333;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+}
+
+    #theme-toggle {
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">WanderScape</div>
+  
+  <!-- Hamburger menu icon (visible on mobile) -->
+  <div id="menu-toggle" class="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="clothing.html">Clothing</a>
+    <a href="festival.html">Festivals</a>
+    <a href="music.html">Music & Dance</a>
+    <a href="food.html">Food</a>
+    <a href="art.html">Art</a>
+    <a id="theme-toggle"><i class="fas fa-moon"></i> Theme</a>
+  </div>
+</nav>
+
+
+
+<header>
+  <img src="https://cdn.britannica.com/90/94690-050-98B490DE/dancer-garba-dance-Ahmadabad-Gujarat-India-state.jpg" alt="culture">
+  <div class="header-content">
+    <h1 data-aos="zoom-in">Vibrant Threads of Gujarat’s Culture</h1>
+  </div>
+</header>
+
+<section class="section" id="destinations">
+    <h2 data-aos="zoom-in">Culture</h2>
+    
+    <div class="culture">
+      <a href="clothing.html" class="card" data-aos="fade-up" data-aos-delay="100" style="text-decoration: none;">
+         <img src="https://i.pinimg.com/736x/d5/a6/2f/d5a62f00169a6b7e0f2bd963376cc7cb.jpg" alt="clothing">
+        <div class="card-content">
+          <h3>Traditional Attire of Gujarat: A Tapestry of Colors and Culture</h3>
+          <p>“Gujarat’s traditional clothing is a vivid reflection of its vibrant heritage, cultural richness, and artistic finesse. The state is known for its colorful, mirror-embellished, and intricately embroidered garments that not only serve as daily wear but also symbolize regional pride during festivals and ceremonies.”</p>
+        </div>
+    </a>
+     <a href="festival.html" class="card" data-aos="fade-up" data-aos-delay="100" style="text-decoration: none;">
+        <video class="card-video" autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/1105488869/preview/stock-footage-vadodara-gujarat-india-fpv-drone-shot-of-navratri-festival.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3>Festivals</h3>
+          <p>“Gujarat’s festivals are a vibrant blend of devotion, dance, and tradition.
+From Navratri’s energetic Garba to the colorful skies of Uttarayan, every celebration reflects cultural unity.
+These festivals bring people together with music, lights, and joyous spirit across the state.”</p>
+        
+      </div>
+      </a>
+      <a href="music.html" class="card" data-aos="fade-up" data-aos-delay="100" style="text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Tyagaraja.jpg" alt="music">
+      
+        <div class="card-content">
+          <h3>Music</h3>
+          <p>Gujarati music echoes the soul of its land, filled with folk tales and devotional tunes.
+From traditional Bhajans to storytelling Dayros, music connects generations with emotion.
+Instruments like dhol, manjira, and nagara bring alive the festive and spiritual rhythms of Gujarat.</p>
+        </div>
+    </a>
+      <a href="food.html" class="card" data-aos="fade-up" data-aos-delay="100" style="text-decoration: none;">
+        <video class="card-video" autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3714442093/preview/stock-footage--k-top-view-of-people-and-variety-of-indian-food-served-on-a-dining-table-gujarati-food-plate-with.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3>Food</h3>
+          <p>Gujarati cuisine offers a delightful blend of sweet, salty, and spicy flavors.
+From soft Dhokla and crispy Fafda to the rich Undhiyu, every dish tells a story.
+Served traditionally in a Thali, it reflects warmth, hospitality, and culture.</p>
+        </div>
+      </a>
+      <a href="art.html" class="card" data-aos="fade-up" data-aos-delay="100" style="text-decoration: none;">
+        <video class="card-video" autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3654893947/preview/stock-footage-designer-handcrafted-embroidery-bags-in-local-market-in-kutch-gujarat-colourful-handcrafted.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3>"The Artistic Soul of Gujarat"</h3>
+          <p>“Gujarat’s art scene is a vibrant tapestry of intricate handicrafts and textile traditions.
+From the detailed Patola silk and Bandhani tie-dye to Rogan painting and Kutch embroidery, creativity thrives in every corner.
+These crafts reflect centuries of cultural legacy passed through generations.”</p>
+        </div>
+    </a>
+      
+
+  
+</section>
+
+
+<footer>
+  <p>&copy; 2025 WanderScape. All rights reserved.</p>
+</footer>
+
+<!-- AOS Animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<!-- Dark Theme Toggle -->
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const icon = toggle.querySelector('i');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+  });
+</script>
+<script>
+document.getElementById('menu-toggle').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('show');
+});
+
+
+</script>
+
+
+</body>
+</html>

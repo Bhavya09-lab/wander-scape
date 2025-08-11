@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Junagadh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f0f8ff, #e6f2ff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #005f73, #0a9396);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      animation: slideInTop 1s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes slideInTop {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header img {
+      width: 60%;
+      border-radius: 70px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .attraction {
+       background: #f0f8ff;
+      border-radius: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      overflow: hidden;
+      animation: slideFade 1s ease-in-out;
+      position: relative;
+    }
+
+    @keyframes slideFade {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .attraction::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      animation: shine 2s infinite;
+      z-index: 0;
+    }
+
+    @keyframes shine {
+      100% { left: 100%; }
+    }
+
+    .attraction:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .attraction img {
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      border-radius:60px;
+    }
+
+    .attraction:hover img {
+      transform: scale(1.1) rotate(1deg);
+    }
+
+    .attraction-content {
+      flex: 1;
+      padding: 2rem;
+      min-width: 280px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      color: #003973;
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    a {
+      display: inline-block;
+      margin: 2rem;
+      color: white;
+      background: #003973;
+      padding: 0.8rem 1.6rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.4s ease, transform 0.3s ease;
+    }
+.header-video-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.header-video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .header-video-container {
+    max-width: 90%;
+    border-radius: 20px;
+  }
+}
+
+    a:hover {
+      background: #001f4d;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .attraction {
+        flex-direction: column;
+      }
+
+      header img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Explore Junagadh – A Spiritual & Historical Gem of Gujarat</h1>
+    <div class="header-video-container">
+  <video autoplay muted loop playsinline>
+    <source src="https://www.shutterstock.com/shutterstock/videos/3798167955/preview/stock-footage-junagadh-city-view-with-mountains-gir-gujarat-aerial-view.webm" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+    <p>Junagadh is a city in the western Indian state of Gujarat. Mahabat Maqbara is the huge 19th-century mausoleum of a local ruler, which showcases intricate Indo-Islamic architectural details. Uparkot Fort, founded around 300 BC, has city views from its ramparts. Within the fort are the stone-cut stepwells Adi Kadi Vav and Navghan Kuwo, plus Buddhist caves. To the west, Darbar Hall Museum is housed in a former palace</p>
+  </header>
+
+  <section>
+    <div class="attraction">
+      <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/june/Ranakdevi-Mahal-&-Uperkot-Fort-1.jpg" alt="Uparkot" />
+      <div class="attraction-content">
+        <h2> Uparkot Fort</h2>
+        <p>This ancient fort, believed to be built by Chandragupta Maurya in 319 BC, sits on a plateau and offers stunning views of the city. Inside, you'll find stepwells (Adi Kadi Vav, Navghan Kuvo), Buddhist caves, and old cannons. It’s a must-visit for history lovers.</p>
+        <a class="map-button" href="https://maps.app.goo.gl/GokN68TnCCt2cE4NA" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+
+    <div class="attraction">
+      <img src="https://go.thrillblazers.in/wp-content/uploads/2020/07/Girnar-Hills-870x555.jpg" alt="girnar Hills" />
+      <div class="attraction-content">
+        <h2>Girnar Hills</h2>
+        <p>A sacred mountain range with thousands of steps leading to ancient Jain and Hindu temples, including the Amba Mata Temple and the Neminath Jain Temple. The newly installed ropeway makes the climb easier and gives beautiful aerial views. It's a pilgrimage and trekking hotspot.</p>
+        <a class="map-button" href="https://maps.app.goo.gl/biAZQNVd3okxbH3x6" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://uparkotfort.com/wp-content/uploads/2024/03/Master.jpg" alt="makbara" />
+      <div class="attraction-content">
+        <h2>Mahabat Maqbara</h2>
+        <p>A striking mausoleum blending Indo-Islamic, Gothic, and European styles. The spiraling minarets, ornate doors, and intricate carvings make it an architectural marvel. It's one of the most Instagrammable spots in Junagadh</p>
+        <a class="map-button" href="https://maps.app.goo.gl/EcXAW2Gx38fZfyMq8" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://c.ndtvimg.com/2024-12/e2n3bhpg_gujarat-white-tiger_625x300_25_December_24.jpg" alt="Garden" />
+      <div class="attraction-content">
+        <h2> Sakkarbaug Zoological Garden</h2>
+        <p>Established in 1863, it is the oldest zoo in India and plays a crucial role in the conservation of Asiatic lions. It houses various wild species including leopards, tigers, and birds. Great for families and wildlife enthusiasts.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/qkUG5D5CEkuKqVzt7" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/36/c5/damodar-kund-water-reservoir.jpg?w=1200&h=1200&s=1" alt="damodar Kund" />
+      <div class="attraction-content">
+        <h2>Damodar Kund</h2>
+        <p>A sacred lake at the foot of Girnar Hills, believed to be associated with Lord Krishna. Pilgrims take ritual baths here, and it’s surrounded by calm and spiritual energy. Nearby, there’s a museum dedicated to the poet Narsinh Mehta.</p>
+      <a class="map-button" href="https://maps.app.goo.gl/hD5hyvgea7md8gtU8" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://mapacademy.io/wp-content/uploads/2022/09/ashoka-edicts-2m.jpg" alt="Edicts" />
+      <div class="attraction-content">
+        <h2>Ashoka Rock Edicts</h2>
+        <p>These ancient inscriptions from the 3rd century BC are carved on a huge rock and written in Brahmi script by Emperor Ashoka. They reflect his thoughts on dharma and peace. It’s a key archaeological and educational site.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/W8BkHmdyhEnRtBi89" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+    
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/buddhist-circuit/buddhist-caves-of-khapra-kodiya/Buddhist-Caves-of-Khapra-Kodiya-Banner.jpg" alt="Khapra" />
+      <div class="attraction-content">
+        <h2>Buddhist Caves (Khapra Kodia Caves)</h2>
+        <p>These 2nd-century BC caves were once meditation halls for Buddhist monks. The simple yet historic rock-cut architecture shows the early influence of Buddhism in Gujarat.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/P4ouwkG2aYShJ1b29" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://www.trawell.in/admin/images/upload/133047944junagadh_museum.jpg" alt="junagadh museum" />
+      <div class="attraction-content">
+        <h2>Junagadh Museum (Darbar Hall Museum)</h2>
+        <p>Located in the former palace of the Nawabs of Junagadh, it showcases weapons, costumes, manuscripts, and artifacts. It’s a great place to dive into the city’s regal past.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/p8R2QcKgYkKC6Z7fA" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIUte2r3Ning6EpMrWrEv209fxH0ATDAAUg&s" alt="temple" />
+      <div class="attraction-content">
+        <h2>Bhavnath Mahadev Temple</h2>
+        <p>Located about 5–8 km from Junagadh Railway Station, this ancient temple is set at Bhavnath village—also known as Girnar Taleti—at the foothills of Mount Girnar</p>
+       <a class="map-button" href="https://maps.app.goo.gl/uheSgNBsLaBCJeXy7" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="junagadh">
+  <h2 data-aos="fade-up"><center>Culture & Traditions of Junagadh</center></h2>
+
+  <!-- Embedded YouTube video -->
+  <div style="max-width: 800px; margin: 1rem auto;" data-aos="zoom-in">
+ <center> <iframe width="360" height="640"
+    src="https://www.youtube.com/embed/FXev3fxhpp0"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe></center>
+  </div>
+
+  <!-- Culture description -->
+  <div class="card" style="max-width: 900px; margin: 2rem auto;" data-aos="fade-up" data-aos-delay="200">
+    <div class="card-content">
+      <h3>Spiritual Essence</h3>
+      <p>Junagadh is more than a historic city—it's a spiritual gateway nestled at the base of the sacred Girnar Hills. Revered by Hindus, Jains, and Buddhists alike, the region symbolizes unity in spiritual diversity.</p>
+<p>1. Girnar – A Sacred Ascent:
+Girnar Parvat is a pilgrimage of endurance and devotion, where over 10,000 steps lead to ancient temples perched along the mountain. The climb is a test of will, often undertaken during the Girnar Parikrama Yatra, a week-long spiritual trek attracting thousands each year.</p>
+      <p>2. Dattatreya Temple at the Peak:
+Atop Girnar lies the Dattatreya Temple, dedicated to the trinity of Brahma, Vishnu, and Shiva combined. The panoramic views and spiritual vibrations here are believed to bring inner clarity and blessings.</p>
+
+      <h3>Festivals</h3>
+      <div class="attraction">
+    <img src="https://www.india-tours.com/images/festivals/bhavnath-fair-gujarat/bhavnath-fair1.jpg" alt="junagadh">
+    <div>
+      <p>Junagadh celebrates a rich tapestry of religious and cultural festivals, drawing pilgrims, history lovers, and spiritual seekers from all over India.</p>
+<p>1. Girnar Parikrama 
+Held annually during Kartik month (October–November), this five-day religious trek circles the sacred Girnar Hill. Lakhs of devotees walk barefoot for nearly 36 km, chanting bhajans and immersing themselves in spiritual devotion. It’s one of Gujarat’s most iconic pilgrimage events.</p>
+<p>2. Mahashivratri at Bhavnath Mahadev Temple
+Celebrated at the foothills of Girnar, this grand fair marks Mahashivratri with naga sadhus, spiritual music, and processions. The atmosphere becomes mystical with the chanting of “Om Namah Shivaya” and night-long prayers and rituals.</p>
+<p>3. Navratri – Nine Nights of Dance & Devotion
+Like the rest of Gujarat, Junagadh shines with vibrant Garba and Dandiya nights during Navratri. Devotees gather to honor Goddess Amba with music, dance, and decorated pandals across the city.</p>
+    </div>
+      </div>
+      <h3>Local Customs</h3>
+      <p>1. Pilgrimage Practices
+Devotees visiting Girnar Hill often begin with a ritual bath in the Mrigi Kund or Damodar Kund, considered holy. It is customary to chant sacred mantras or recite the Girnar Katha while ascending the 10,000+ steps to reach the summit temples.
+2. Offering Bells & Threads
+Pilgrims frequently tie red or yellow threads on trees near temples, symbolizing wishes or gratitude. Brass bells are also offered at various shrines to seek blessings from deities like Dattatreya and Amba Mata.</p>
+  
+    </div>
+  </div>
+      
+
+
+
+</section>
+
+  <a href="index.html">← Back to Main Page</a>
+
+</body>
+</html>

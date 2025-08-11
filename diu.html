@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diu – Coastal Charm of India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f0f8ff, #e6f2ff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, skyblue, #e5e5be);
+      color:black;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      animation: slideInTop 1s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes slideInTop {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header img {
+      width: 50%;
+      border-radius: 75px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .attraction {
+      background: white;
+      border-radius: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      overflow: hidden;
+      animation: slideFade 1s ease-in-out;
+      position: relative;
+    }
+
+    @keyframes slideFade {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .attraction::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      animation: shine 2s infinite;
+      z-index: 0;
+    }
+
+    @keyframes shine {
+      100% { left: 100%; }
+    }
+
+    .attraction:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .header img:hover{
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .attraction img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      border-radius: 70px;
+    }
+
+    .attraction:hover img {
+      transform: scale(1.1) rotate(1deg);
+    }
+
+    .attraction-content {
+      flex: 1;
+      padding: 2rem;
+      min-width: 280px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      color: #003973;
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #003973;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .map-button:hover {
+      background-color: #001f4d;
+    }
+
+    a {
+      display: inline-block;
+      margin: 2rem;
+      color: white;
+      background: #003973;
+      padding: 0.8rem 1.6rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.4s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+      background: #001f4d;
+      transform: scale(1.05);
+    }
+    .responsive-header-video {
+  max-width: 600px;
+  width: 90%;
+  aspect-ratio: 1/1;
+  margin: 1.5rem auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.responsive-header-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .responsive-header-video {
+    aspect-ratio: 4/3;
+    border-radius: 20px;
+  }
+}
+
+    @media (max-width: 768px) {
+      .attraction {
+        flex-direction: column;
+      }
+
+      header img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Diu – Coastal Charm of India</h1>
+    <div class="responsive-header-video">
+  <video autoplay muted loop playsinline>
+    <source src="https://www.shutterstock.com/shutterstock/videos/3660503073/preview/stock-footage-ocean-stormy-waves-storm-sea-aerial-view.webm" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+    <p>Discover serene beaches, historic forts, and luxury resorts by the Arabian Sea</p>
+  </header>
+
+  <section>
+    <!-- Example attraction with map button instead of iframe -->
+    <div class="attraction">
+      <img src="https://makeithappen.co.in/wp-content/uploads/2021/12/Diu-Fort-G1-Mobile-5.jpg" alt="Diu Fort" />
+      <div class="attraction-content">
+        <h2>Diu Fort</h2>
+        <p>Built by the Portuguese in the 16th century, this majestic fort offers panoramic sea views, historic walls, lighthouses, and old cannons. A must-visit for history lovers and photographers.</p>
+        <a class="map-button" href="https://maps.app.goo.gl/tGV1LAnqho2d7ncW7" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+<div class="attraction">
+      <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/19/34e36c17691491727a267a86820f09ae_1000x1000.jpg" alt="Nagoa Beach" />
+      <div class="attraction-content">
+        <h2>Nagoa Beach</h2>
+        <p>The most popular beach in Diu, perfect for water sports, jet skiing, and sunbathing. Lined with coconut palms and beachfront resorts for a relaxing stay.</p>
+        <a class="map-button" href="https://maps.app.goo.gl/S2iLLbvQXD6BtQqE8" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://s7ap1.scene7.com/is/image/incredibleindia/ghoghla-beach-daman-and-diu-diu-3-attr-hero?qlt=82&ts=1726737843363" alt="ghoghla Beach" />
+      <div class="attraction-content">
+        <h2>Ghoghla Beach</h2>
+        <p>Clean and peaceful with fewer crowds.Blue Flag certified for eco-friendliness.Water sports and camel rides available.</p>
+        <a class="map-button" href="https://maps.app.goo.gl/YWxPTwyJyw9PxhjF6" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://www.trawell.in/admin/images/upload/899766580Diu_Museum.jpg" alt="Diu Museum" />
+      <div class="attraction-content">
+        <h2> Diu Museum (St. Thomas Church)</h2>
+        <p>Converted from a church into a museum.Exhibits ancient sculptures, idols, and Portuguese relics.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/ZGoBsVNsyC1u93pR7" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://s7ap1.scene7.com/is/image/incredibleindia/ins-khukri-memorial-diu-4-attr-hero?qlt=82&ts=1726737830179" alt="INS Khukri Memorial" />
+      <div class="attraction-content">
+        <h2>INS Khukri Memorial</h2>
+        <p>A tribute to the Indian Navy warship sunk during the 1971 war.Peaceful hilltop site with ocean views.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/2g33b3QSkHRXPfw56" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://c8.alamy.com/comp/GD8DHH/vanakbara-fishing-port-in-diu-island-india-GD8DHH.jpg" alt="fishing village" />
+      <div class="attraction-content">
+        <h2>Vanakbara Fishing Village</h2>
+        <p>Colorful boats, busy docks, and traditional fishing culture.A raw, authentic glimpse of coastal life.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/WJcC1cjGNTBd22Gv6" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://www.holidify.com/images/cmsuploads/compressed/Screenshot2020-12-18at11.14.43AM_20201218111511.png" alt="simbor" />
+      <div class="attraction-content">
+        <h2>Simbor Beach – Diu’s Hidden Coastal Gem</h2>
+        <p>Located approximately 20 km east of Diu, in the quaint village of Simbor, this beach stands out for its unspoiled quietness, golden sands, and crystal-clear waters—ideal for those seeking a serene escape</p>
+       <a class="map-button" href="https://maps.app.goo.gl/WpSpPNfdnr1Mne45A" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://content.jdmagicbox.com/comp/def_content_category/bird-sanctuary/dbdccce2bf-bird-sanctuary-4-dwhim.jpg" alt="Fudam" />
+      <div class="attraction-content">
+        <h2>Fudam Bird Sanctuary</h2>
+        <p>Location: Situated on Diu Island in a coastal marshland, covering about 2.18 km².
+Established: In 1991 and managed by the Diu Forest & Tourism Department .
+Bird Species: Home to 108+ species, including Flamingos, Painted Stork, Purple Sunbird, Striated Heron, Cattle Egret, and many more.
+Facilities: Includes a bird observatory tower and a forest office—perfect for binocular-supported viewing.</p>
+<p>Best times: Early morning or evening for ideal bird activity.Peak season: Winter months (October–March) when migratory birds are present</p>
+<p>You can take a short boat ride through the mangroves (~₹350 per trip), often with binoculars provided by boatmen, to get up close to herons, kingfishers, ibises, and more</p>
+       <a class="map-button" href="https://maps.app.goo.gl/g3hP2eKGUQp3EhhY6" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://www.exploreourindia.com/backend/web/images/blog/474_Gangeshwarmahadev.webp" alt="temple" />
+      <div class="attraction-content">
+        <h2>🕉 Gangeshwar Mahadev Temple – The Seashore Shrine of Shiva</h2>
+        <p>Nestled just 3 km from Diu in Fudam Village, this ancient cave-temple is carved into coastal rocks, where the waves of the Arabian Sea continually wash over its sacred five Shiva Lingas</p>
+       <a class="map-button" href="https://maps.app.goo.gl/d474L6eQjj6fKjkh8" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <!-- Add more .attraction blocks as needed -->
+
+  </section>
+ 
+<section class="section" id="diu">
+  <h2 data-aos="fade-up"><center>Culture & Traditions of Diu</center></h2>
+
+  <!-- Embedded YouTube video -->
+  <div style="
+  max-width: 400px;
+  aspect-ratio: 9/16;
+  margin: 0 auto 2rem auto;
+  border-radius: 75px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+">
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/6iHT5s_ga3Y"
+    title="YouTube Shorts"
+    frameborder="0"
+    style="border: none;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+  <!-- Culture description -->
+  <div class="card" style="max-width: 900px; margin: 2rem auto;" data-aos="fade-up" data-aos-delay="200">
+    <div class="card-content">
+      <h3>Spiritual Essence</h3>
+      <p>Diu is more than just serene beaches and Portuguese forts—it's a place where spirituality breathes quietly through ancient temples, sacred shrines, and peaceful coastal rituals. From the rhythmic chants at Gangeshwar Mahadev Temple, where the sea itself worships the Shiva lingas, to the tranquil solitude of St. Thomas Church turned Museum, Diu whispers stories of faith across cultures. The island offers a rare harmony of Hindu and Christian heritage, inviting visitors to pause, reflect, and reconnect with the divine amid nature’s calm. Whether you're watching the sunrise over the Arabian Sea or lighting incense at a centuries-old shrine, Diu’s spiritual aura leaves the soul rested and inspired.</p>
+
+      <h3>Festivals</h3>
+      <div class="attraction">
+    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201511/about-diu_647_113015042430.jpg?VersionId=YKyfsN.MbDNs1ffvKatW6zTMmG3mepqB" alt="diu">
+    <div>
+      <p>1. Festa De Diu (Diu Festival)
+When: December to February (Usually lasts around 3 months)
+What: Asia’s longest beach festival
+Highlights:Live music concerts
+Cultural performances
+Food stalls and flea markets
+Adventure sports and water activities
+Art installations and beach camping</p>
+<p>
+ 2. Nariyal Poornima (Coconut Festival)
+When: August (Full moon of Shravan month)
+What: A traditional offering to the sea by fishermen
+Highlights:Decorated boats and processions
+Offerings of coconuts to the sea for safe voyages
+Folk dances and devotional songs
+</p>
+    </div>
+      </div>
+      <h3>Local Customs</h3>
+      <p>1. Blend of Gujarati and Portuguese Traditions
+Cultural Harmony: Locals practice both Hindu and Christian traditions with equal respect.
+Language: Gujarati is widely spoken, but many older residents also speak Portuguese or understand it due to colonial influence.
+<p> 2. Fishing & Sea Worship Traditions
+Fisherfolk Communities: Fishing is a major livelihood; communities like the Kharwas have their own sea-based customs.
+Sea Worship:Nariyal Poornima (Coconut Festival) involves offering coconuts to the sea for safe voyages.
+Boats are often decorated and blessed before the fishing season.</p>
+<p> 3. Traditional Dance and Music
+Garba and Dandiya Raas: Popular during Navratri, danced in local attire with devotion.
+Portuguese Fado Music: Occasionally sung or played at heritage homes or during Diu Carnival.
+</p>
+    
+    </div>
+  </div>
+
+</section>
+
+
+  <a href="index.html">← Back to Main Page</a>
+
+</body>
+</html>

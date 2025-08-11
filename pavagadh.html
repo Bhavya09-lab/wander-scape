@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pavagadh- WanderScape</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #e0f7fa, #d1c4e9, #ffe0b2, #f8bbd0);
+    background-size: 400% 400%;
+    animation: backgroundWave 15s ease infinite;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  @keyframes backgroundWave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  header {
+    background: linear-gradient(to right, rgb(40, 154, 63), #023d17);
+    color: black;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    animation: slideInTop 1s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes slideInTop {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  header img {
+    width: 60%;
+    border-radius: 70px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    animation: fadeIn 2s ease-in-out;
+    height: auto;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    animation: fadeInSection 1.5s ease-in-out;
+  }
+
+  @keyframes fadeInSection {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .attraction {
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    overflow: hidden;
+    animation: zoomFade 1.5s ease forwards;
+    opacity: 0;
+  }
+
+  .attraction:nth-child(1) { animation-delay: 0.2s; }
+  .attraction:nth-child(2) { animation-delay: 0.4s; }
+  .attraction:nth-child(3) { animation-delay: 0.6s; }
+  .attraction:nth-child(4) { animation-delay: 0.8s; }
+  .attraction:nth-child(5) { animation-delay: 1s; }
+  .attraction:nth-child(6) { animation-delay: 1.2s; }
+  .attraction:nth-child(7) { animation-delay: 1.4s; }
+  .attraction:nth-child(8) { animation-delay: 1.6s; }
+
+  @keyframes zoomFade {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .attraction::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(30, 119, 77), #2c963a);
+    animation: shine 2.5s infinite;
+    z-index: 0;
+  }
+  a[target="_blank"] {
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+a[target="_blank"]:first-of-type {
+  background: #28a745;
+}
+
+a[target="_blank"]:first-of-type:hover {
+  background: #1e7e34;
+}
+
+
+  @keyframes shine {
+    100% { left: 100%; }
+  }
+
+  .attraction:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .attraction img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 60px;
+  }
+
+  .attraction:hover img {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  .attraction-content {
+    flex: 1;
+    padding: 2rem;
+    min-width: 280px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInRight 2s ease;
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  h2 {
+    color: #003973;
+    margin-top: 0;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  
+
+  a {
+    display: inline-block;
+    margin: 2rem;
+    color: white;
+    background: #003973;
+    padding: 0.8rem 1.6rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.4s ease, transform 0.3s ease;
+    animation: fadeIn 2s ease-in-out;
+  }
+ .responsive-video {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1.5rem auto;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+
+  a:hover {
+    background: #001f4d;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .attraction {
+      flex-direction: column;
+    }
+
+    header img {
+      width: 100%;
+    }
+  }
+  .map-button:hover{
+     background: green;
+    transform: scale(1.05);
+  }
+
+   </style>
+</head>
+<body>
+<!-- Your content remains unchanged here -->
+ <header>
+    <h1>Champaner-Pavagadh: The Timeless Heritage Hill of Gujarat</h1>
+    <video autoplay muted loop playsinline class="responsive-video">
+  <source src="https://www.shutterstock.com/shutterstock/videos/3681271747/preview/stock-footage-pha-suea-waterfall-in-the-forest-of-thailand-near-mae-hong-son-city.webm" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+    <p>Champaner-Pavagadh Archaeological Park, a UNESCO World Heritage Site, is a mesmerizing blend of history, architecture, and spirituality nestled in Gujarat’s Panchmahal district. This remarkable site showcases a unique fusion of Hindu and Islamic architecture, built between the 8th and 16th centuries. It was once the capital of Gujarat under Sultan Mahmud Begada and holds ancient temples, mosques, stepwells, fortifications, palaces, and residential complexes.
+Pavagadh Hill, believed to be a chunk of the Himalayas carried by Lord Hanuman, is a major pilgrimage site. The Kalika Mata Temple perched at its summit draws thousands of devotees every year. A ropeway to the temple offers breathtaking panoramic views of the lush green landscape.
+Whether you're a history enthusiast, a nature lover, or a spiritual seeker, Champaner-Pavagadh promises an unforgettable journey into Gujarat's vibrant past.
+</p>
+  </header>
+
+  <section>
+    <div class="attraction">
+      <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/pavagadh-kalika-mata-temple/pavagadhtempletopview.jpg" alt="kalaka maa" />
+      <div class="attraction-content">
+        <h2>Kalika Mata Temple</h2>
+        <p>A sacred Shakti Peeth, this 10th-century temple sits atop Pavagadh Hill and is one of the most important Hindu pilgrimage sites in western India.</p>
+         <a class="map-button" href="https://maps.app.goo.gl/Ja5ZGns8Gof3aAjFA" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+
+    <div class="attraction">
+      <img src="https://media.tripinvites.com/places/champaner/lakulisa-temple/lakulisa-temple-featured.jpg" alt="lakulisa temple" />
+      <div class="attraction-content">
+        <h2>Lakulisa Temple (on the way to Kalika Mata Temple)</h2>
+        <p>A historic site dedicated to a Shaivite sect, offering insight into early Hindu temple architecture.</p>
+        <a class="map-button" href="https://maps.app.goo.gl/k7y5Zmpjupvis3UaA" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Pavagadh_006.jpg" alt="ropeway" />
+      <div class="attraction-content">
+        <h2>Ropeway to Pavagadh Hill</h2>
+        <p>A scenic ride that makes the climb to Kalika Mata Temple more accessible while offering beautiful aerial views.</p>
+        <a class="map-button" href="https://maps.app.goo.gl/qGxmajDg5KjfbSjg7" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://content3.jdmagicbox.com/comp/panchmahal/p4/9999p2672.2672.220315215325.r5p4/catalogue/pavagadh-view-point-vada-talav-pavagadh-tourist-attraction-fhcejkoxnj.jpg" alt="vadatalav" />
+      <div class="attraction-content">
+        <h2>Vada Talav (Big Lake)</h2>
+        <p>A serene spot at the base of Pavagadh Hill, great for relaxing and taking in the views of the hill.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/UNR5DyQagogtptpm7" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/19/14ef681d7f373c9279503d6b8fe7c97e_1000x1000.jpg" alt="pavagadh fort" />
+      <div class="attraction-content">
+        <h2>Pavagadh Fort</h2>
+        <p>Ruins of ancient fortifications with scenic trekking routes and panoramic views of the surrounding plains.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/XyUApM1b39SkvtcAA" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Jama_masjid_in_Champaner.JPG" alt="jami Masjid" />
+      <div class="attraction-content">
+        <h2>Jami Masjid (Champaner)</h2>
+        <p>An exquisite blend of Hindu-Muslim architecture, this mosque from the 15th century features towering minarets, carved pillars, and a majestic prayer hall.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/RWC3yM91NADEudmd8" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Sahar_ki_masjid%2C_bohrani%2C_champaner_pavagadh.jpg" alt="Sahar" />
+      <div class="attraction-content">
+        <h2>Sahar Ki Masjid</h2>
+        <p>Known as the “Mosque of the City,” it is another beautiful structure with stunning jali (lattice) work and domes.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/Y3yGTcRjSZiJ8Emc8" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Kevda_Masjid_07.jpg" alt="Kevada" />
+      <div class="attraction-content">
+        <h2>Kevada Masjid</h2>
+        <p>A charming mosque surrounded by lush gardens and stepwells, ideal for photography and peaceful walks.</p>
+       <a class="map-button" href="https://maps.app.goo.gl/EE8gJ5mHeXyGkBJZ7" target="_blank"><i class="fas fa-map-marker-alt"></i> View on Map</a>
+      </div>
+    </div>
+  </section>
+<!-- Keep everything unchanged above this line -->
+
+<section>
+  <h2 style="text-align:center; margin-bottom: 2rem; color: #003973;">Stay Near Pavagadh – Recommended Hotels</h2>
+  <div style="text-align:center; margin-bottom: 2rem;">
+    <label for="priceFilter" style="font-weight:bold; font-size: 1.1rem; color: #003973;">Filter by Price Range:</label>
+    <select id="priceFilter" onchange="filterHotels()" style="padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+      <option value="all">All</option>
+      <option value="low">Under ₹1500</option>
+      <option value="mid">₹1500–₹2500</option>
+      <option value="high">Above ₹2500</option>
+    </select>
+  </div>
+
+  <!-- ✅ Start of filtered hotel list -->
+  <div class="hotel-list">
+    <div class="attraction">
+      <img src="https://imgcld.yatra.com/ytimages/image/upload/t_hotel_tg_details_seo/v1515652622/Hotel/Pavagadh/00071792/Main_display_image_R0afc5.jpg" alt="Heritage Resort Pavagadh" />
+      <div class="attraction-content">
+        <h2>Heritage Resort Pavagadh</h2>
+        <p>Located just 1.5 km from the ropeway, this resort offers scenic views, a peaceful garden, and comfortable family rooms.</p>
+        <p><strong>Price:</strong> ₹2500–₹3000 per night</p>
+        <a href="https://www.googleadservices.com/pagead/aclk?..." target="_blank" style="background:#28a745;">Book Now</a>
+        <a href="https://maps.app.goo.gl/E3wQktv7f1KP48sv5" target="_blank">View on Map</a>
+      </div>
+    </div>
+
+    <div class="attraction">
+      <img src="https://r1imghtlak.mmtcdn.com/4191930e037c11ec89420a58a9feac02.jpg" alt="Hotel hill view" />
+      <div class="attraction-content">
+        <h2>Hotel Hill View</h2>
+        <p>Mid-range hotel with rooftop view</p>
+        <p><strong>Price:</strong> ₹1600–₹2000 per night</p>
+        <a href="https://www.makemytrip.com/hotels/hotel_hill_view-details-halol.html" target="_blank" style="background:#28a745;">Book Now</a>
+        <a href="https://maps.app.goo.gl/B8aVJXskCjjARGCF9" target="_blank">View on Map</a>
+      </div>
+    </div>
+
+    <div class="attraction">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/8a/e6/70/beautifull-view-pool.jpg?w=900&h=500&s=1" alt="greenland resort" />
+      <div class="attraction-content">
+        <h2>Greenland Resort</h2>
+        <p>Comfortable resort with nature views</p>
+        <p><strong>Price:</strong> ₹4950 per night</p>
+        <a href="https://www.makemytrip.com/hotels/greenland_resort-details-halol.html" target="_blank" style="background:#28a745;">Book Now</a>
+        <a href="https://maps.app.goo.gl/zv8vXvUDwfi94Y2Y6" target="_blank">View on Map</a>
+      </div>
+    </div>
+
+    <div class="attraction">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipOJFl0Q_-D2ixTl4hJpEwsLZLiggU9u8F1hFSBd=s1360-w1360-h1020-rw" alt="Hotel Paradise" />
+      <div class="attraction-content">
+        <h2>Basalt Paradise Resort and Spa</h2>
+        <p>10.00km drive to Champaner-Pavagadh Archaeological Park.</p>
+        <p><strong>Price:</strong> ₹4878 per night</p>
+        <a href="https://www.makemytrip.com/hotels/basalt_paradise_resort_and_spa-details-halol.html" target="_blank" style="background:#28a745;">Book Now</a>
+        <a href="https://maps.app.goo.gl/sLXfxy8tLbLp2TKp8" target="_blank">View on Map</a>
+      </div>
+    </div>
+  </div> <!-- ✅ End of .hotel-list -->
+
+</section>
+<section class="section" id="pavagadh">
+  <h2 data-aos="fade-up"><center>Culture & Traditions of Pavagadh</center></h2>
+
+  <!-- Embedded YouTube video -->
+  <div style="
+  max-width: 400px;
+  aspect-ratio: 9/16;
+  margin: 0 auto 2rem auto;
+  border-radius: 75px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+">
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/unQy3hbF2xg"
+    title="YouTube Shorts"
+    frameborder="0"
+    style="border: none;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+  <!-- Culture description -->
+  <div class="card" style="max-width: 900px; margin: 2rem auto;" data-aos="fade-up" data-aos-delay="200">
+    <div class="card-content">
+      <h3>Spiritual Essence</h3>
+      <p>Dwarka is one of the four Char Dham pilgrimage sites and is deeply rooted in Krishna devotion. The Dwarkadhish Temple is not just a religious site but a cultural hub with daily rituals, aartis, and festivals.</p>
+
+      <h3>Festivals</h3>
+      <div class="attraction">
+    <img src="https://www.gujaratheadline.com/wp-content/uploads/2017/12/panchmahotsav-2017-2.jpg" alt="Navratri">
+    <div>
+      <p>The most prominent festival celebrated at Pavagadh is Navratri, a nine-night festival dedicated to Goddess Durga. During this time, thousands of devotees climb the steps or take the ropeway to offer prayers at Kalika Mata Temple. The temple is adorned with lights, garlands, and incense, creating a spiritually charged atmosphere. Traditional Garba and devotional singing echo around the temple premises.</p>
+    </div>
+      </div>
+      <h3>Local Customs</h3>
+      <p>Many devotees prefer to climb the 1800+ steps to the Kalika Mata Temple as an act of devotion, chanting mantras like “Jai Maa Kali” along the way. It is believed that walking barefoot shows humility and earns blessings from the Goddess.</p>
+    <div style="margin-top: 1rem; text-align: center;">
+  <a href="https://www.lokdayro.com/category/navratri/(1)old-and-new-evergreen-garbas/garba-lyrics/326.php" target="_blank" 
+     style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; border-radius: 6px; font-weight: bold; text-decoration: none;">
+    🎧 Listen to "pavali laie ne hu to pavagadh gaie ti"
+  </a>
+</div>
+    </div>
+  </div>
+      
+
+
+
+</section>
+
+
+<!-- ✅ Keep your script at the end -->
+<script>
+  function filterHotels() {
+    const filter = document.getElementById("priceFilter").value;
+    const hotels = document.querySelectorAll(".hotel-list .attraction");
+
+    hotels.forEach(hotel => {
+      const priceText = hotel.querySelector("p strong")?.nextSibling?.textContent || "";
+      const priceRange = priceText.match(/\d+/g);
+      let min = parseInt(priceRange?.[0] || "0");
+      let max = parseInt(priceRange?.[1] || priceRange?.[0] || "0");
+
+      if (
+        filter === "low" && max > 1500 ||
+        filter === "mid" && (min < 1500 || max > 2500) ||
+        filter === "high" && min < 2500
+      ) {
+        hotel.style.display = "none";
+      } else {
+        hotel.style.display = "flex";
+      }
+
+      if (filter === "all") hotel.style.display = "flex";
+    });
+  }
+</script>
+
+
+
+  <a href="index.html">← Back to Main Page</a>
+
+</body>
+</html>

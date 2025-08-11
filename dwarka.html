@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dwarka – Gujarat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  color:black;
+  background: url('https://www.daiwikhotels.com/wp-content/uploads/2024/08/Lord-Krishnas-City-1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6); /* White overlay for readability */
+  z-index: -1;
+}
+
+
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      color: #2a5d84;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #444;
+      text-align: center;
+    }
+
+    h3 {
+      color: #2a5d84;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #fff;
+      background-color: #2a5d84;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #1b3e5b;
+    }
+
+    .full-width-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .attraction {
+      overflow: hidden;
+      margin: 2rem 0;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, background 0.5s ease;
+    }
+
+    .attraction:hover {
+      transform: scale(1.02);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .attraction img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+/* Optional for spacing when no float used */
+.attraction div {
+  padding-left: 0;
+}
+@media (max-width: 768px) {
+  .attraction {
+    display: block;
+    text-align: center;
+  }
+
+  .attraction img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto 1rem;
+    float: none;
+  }
+
+  .attraction div {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+    .attraction:hover img {
+      transform: scale(1.05);
+    }
+
+    .attraction::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .popular-song {
+  background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+  border-radius: 30px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-song:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.song-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2a5d84;
+  margin-bottom: 0.3rem;
+}
+
+.song-artist {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.listen-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2a5d84;
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.listen-button:hover {
+  background-color: #184d6b;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+    .map-button {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #2a5d84;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .map-button:hover {
+      background-color: #1e466a;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dwarka – The City of Krishna</h1>
+
+  <div class="full-width-image">
+    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/dwarka-beach-dwarka-gujarat-1-attr-hero?qlt=82&ts=1726734737881" alt="Dwarka Beach">
+    <p>
+      Dwarka is one of the seven most ancient religious cities (Sapta Puri) in India and the legendary capital of Lord Krishna's kingdom, located on the western tip of Gujarat.
+    </p>
+  </div>
+
+  <h2>Major Attractions Include:</h2>
+
+  <div class="attraction">
+    <img src="https://mystreal.com/_next/image/?url=%2Ftemple%2Fdwarkadhish-temple%2Fhero-dwarkadeesh-temple.webp&w=3840&q=75" alt="Dwarkadhish Temple">
+    <div>
+      <h3>Dwarkadhish Temple</h3>
+      <p>
+        Sacred Hindu shrine dedicated to Lord Krishna. Built over 2,500 years ago and reconstructed in the 16th century. It features 72 carved pillars and a towering shikhara.
+      </p>
+      <a class="map-button" href="https://maps.app.goo.gl/MPdAFVrys3KKS1yJ6" target="_blank">📍 View on Map</a>
+    </div>
+  </div>
+
+  <div class="attraction">
+    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/gomti-ghat-dwarka-gujarat-2-musthead-hero?qlt=82&ts=1726734689348" alt="Gomti Ghat">
+    <div>
+      <h3>Gomti Ghat</h3>
+      <p>
+        Sacred confluence of the Gomti River and Arabian Sea, near Dwarkadhish Temple. Pilgrims bathe here before darshan in a spiritually serene environment.
+      </p>
+      <a class="map-button" href="https://maps.app.goo.gl/qXBLHeShAJ6iuJH46" target="_blank">📍 View on Map</a>
+    </div>
+  </div>
+
+  <div class="attraction">
+    <img src="https://www.gujarattourism.com/content/gujrattourism/en/saurashtra/devbhoomi-dwarka/bet-dwarka/_jcr_content/root/responsivegrid/detailbannercrop.coreimg.jpeg/1715666247036/okha-1.jpeg" alt="Beyt Dwarka">
+    <div>
+      <h3>Beyt Dwarka Island</h3>
+      <p>
+        Accessible by boat from Okha, believed to be Krishna's original residence. Offers scenic views, sacred temples, dolphin sightings, and peaceful beaches.
+      </p>
+      <a class="map-button" href="https://maps.app.goo.gl/QDHcCCvbi7TxJKpU8" target="_blank">📍 View on Map</a>
+    </div>
+  </div>
+
+  <div class="attraction">
+    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/rukmini-devi-temple-dwarka-gujarat-2-attr-hero?qlt=82&ts=1726734705847" alt="Rukmini Devi Temple">
+    <div>
+      <h3>Rukmini Devi Temple</h3>
+      <p>
+        Located 2 km from Dwarka, this temple honors Rukmini, Krishna’s consort. Known for its stone carvings and serene atmosphere.
+      </p>
+      <a class="map-button" href="https://maps.app.goo.gl/k3DhQB8mpgYQTH97A" target="_blank">📍 View on Map</a>
+    </div>
+  </div>
+  <div class="attraction">
+    <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/religious-sites/nageshwar-jyotirlinga/Nageshwar-Jyotirlinga-Thumbnail.jpg" alt="Nageshwara">
+    <div>
+      <h3>Nageshwara jyotirlingas</h3>
+      <p>
+        The Nageshwar Jyotirlinga Temple, located about 12 km from Dwarka, is one of the 12 sacred Jyotirlingas dedicated to Lord Shiva. Nestled on the coast of Saurashtra in Gujarat, this powerful spiritual site is believed to protect devotees from all forms of poison and evil forces.
+
+The temple houses a striking 25-meter tall statue of Lord Shiva, which can be seen from a distance and adds to the divine ambiance of the place. According to the Shiv Purana, the Nageshwar Jyotirlinga is the first among the twelve Jyotirlingas, where Lord Shiva appeared to protect his devotee Supriya from a demon.
+      </p>
+      <a class="map-button" href="https://maps.app.goo.gl/cATdTDecV5QaC48g9" target="_blank">📍 View on Map</a>
+    </div>
+  </div>
+ <section class="section" id="dwarka-culture">
+  <h2 data-aos="fade-up">Culture & Traditions of Dwarka</h2>
+
+  <!-- Embedded YouTube video -->
+  <div style="
+  max-width: 400px;
+  aspect-ratio: 9/16;
+  margin: 0 auto 2rem auto;
+  border-radius: 75px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+">
+  <iframe
+    width="100%"
+    height="100%"
+    src=" https://www.youtube.com/embed/5dtWHiaZ3GY"
+    title="YouTube Shorts"
+    frameborder="0"
+    style="border: none;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+ 
+
+  <!-- Culture description -->
+  <div class="card" style="max-width: 900px; margin: 2rem auto;" data-aos="fade-up" data-aos-delay="200">
+    <div class="card-content">
+      <h3>Spiritual Essence</h3>
+      <p>Dwarka is one of the four Char Dham pilgrimage sites and is deeply rooted in Krishna devotion. The Dwarkadhish Temple is not just a religious site but a cultural hub with daily rituals, aartis, and festivals.</p>
+
+      <h3>Festivals</h3>
+      <div class="attraction">
+    <img src="https://th-i.thgim.com/public/incoming/ggctjj/article65264561.ece/alternates/FREE_1200/003%20VIS_0489.JPG" alt="Nageshwara">
+    <div>
+      <p>Janmashtami, celebrating Lord Krishna's birth, is the biggest festival here with grand decorations and temple processions.Holi in Dwarka is more than just a festival—it's a divine reenactment of Krishna’s playful spirit. As one of the holiest cities in India associated with Lord Krishna, Dwarka celebrates Holi with unmatched devotion and grandeur. The celebrations begin days before the actual festival with the city buzzing in preparation—temples are adorned, bhajans echo in the air, and sweets like gujiya and thandai are prepared in homes.</p>
+    </div>
+      </div>
+      <h3>Local Customs</h3>
+      <p>Many pilgrims take a holy dip in the Gomti River before visiting the temple. Traditional Gujarati attire and Krishna bhajans are a common sight.</p>
+    <div style="margin-top: 1rem; text-align: center;">
+  <h3 style="color: #2a5d84;">🎵 Popular Bhajan for Dwarka</h3>
+
+  <div class="popular-song">
+    <div class="song-title">🎧Dwarka no nath maro raja ranchhod chhe</div>
+    <div class="song-artist">Artist: Jigneshdada</div>
+    <p>Genre: Gujarati Folk</p>
+    <a href="https://open.spotify.com/track/14jJtO8tAq63TZ4fZnfoVh" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+
+  <div class="popular-song">
+    <div class="song-title">🎶 Nagar nandaji na laal</div>
+    <div class="song-artist">Artist: Aditya Gadhavi</div>
+    <p>Genre: Gujarati Folk</p>
+    <a href="https://open.spotify.com/track/2ulKbV2d3ZKRaA2CnjNhmx" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+</div>
+
+    </div>
+  </div>
+      
+
+
+
+</section>
+
+  <a href="index.html">← Back to Main Page</a>
+</body>
+</html>

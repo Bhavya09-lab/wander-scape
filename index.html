@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderScape - Travel Blog</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+     background: linear-gradient(to right, #ffe0b2, #fff3e0);
+
+
+
+      color: #333;
+    }
+   
+    nav a {
+  position: relative;
+  padding: 0.6rem 1.2rem;
+  margin-left: 1rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav a:hover {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.3);
+  animation: pulse 0.8s ease;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.animated-border {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: borderMove 8s linear infinite;
+  z-index: -1;
+  border-radius: 65px;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+nav.scrolled a {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+nav.scrolled a:hover {
+  background: linear-gradient(to right, #28a745, #20c997);
+  color: white;
+}
+
+   nav .logo {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #fff;
+  background: linear-gradient(90deg, #ff6a00, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.6rem 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 12px;
+}
+
+   nav a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  margin-left: 1rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-toggle:hover {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.3);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #ff9900;
+  transition: width 0.4s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+    
+    header {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border-radius: 0px; /* remove or reduce for mobile */
+  cursor: pointer;
+  padding: 0 1rem;
+}
+    
+
+    
+   header h1 {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  z-index: 1;
+  background-color: rgba(16, 63, 24, 0.5);
+  border-radius: 25px;
+  max-width: 90%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 60vh;
+    border-radius: 0;
+  }
+
+ 
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+}
+
+
+   
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-family: 'Playfair Display', serif;
+      color: #222;
+    }
+
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 50px;
+      
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      
+      
+      transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.03);
+    }
+
+   
+
+    .card:hover::before {
+      opacity: 1;
+    }
+.card::after {
+  display: none !important;
+}
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+/* Style the toggle like nav buttons */
+.nav-button {
+  padding: 0.6rem 1.2rem;
+  margin-left: 1rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  color: #333;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.nav-button:hover {
+  background: linear-gradient(to right, #44d111, #08974d);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.3);
+}
+header .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7));
+  z-index: 1;
+  padding: 0 1rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.5rem;
+  padding: 1.2rem 2rem;
+  z-index: 2;
+  background-color: rgba(16, 63, 24, 0.6);
+  border-radius: 25px;
+  max-width: 90%;
+  text-align: center;
+  line-height: 1.4;
+}
+
+
+    .card-content {
+      background-color: #fff;
+      color: #333;
+      padding: 1rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    .card-content h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    .slideshow-header {
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 0.5s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(to right, #ff6a00, #c10245, #e94545);
+  width: 0%;
+  z-index: 2000;
+  transition: width 0.25s ease;
+}
+
+.slideshow-header {
+  transition: background-image 0.5s ease-in-out;
+}
+
+
+
+
+nav input[type="text"] {
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+nav input[type="text"]:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.hero-button {
+  background: #87076d;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .card-content p {
+    font-size: 0.9rem;
+  }
+  .explore-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode nav {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .card {
+    background-color: #222;
+    color: #fff;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff6b6b, #f06595);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.explore-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #36ab13, #164d06);
+}
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Desktop default (already applied) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .logo {
+    margin-bottom: 1rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    padding: 0.6rem 1rem;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  #contact .contact-icon {
+    font-size: 1rem;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+  }
+}
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode nav {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .card {
+    background-color: #222;
+    color: #fff;
+}
+
+body.dark-mode a {
+    color: #f0f0f0;
+}
+
+/* Style the toggle button */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+
+
+.card .explore-btn {
+  display: inline-block;
+}
+
+
+.hero-button:hover {
+  background: #218838;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+
+
+    @media (max-width: 768px) {
+  .destinations {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    border-radius: 20px;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card img, .card video {
+    height: auto;
+    max-height: 200px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Preview Modal -->
+<div id="preview-modal" style="
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+">
+  <span onclick="closePreview()" style="
+    color: white; font-size: 2rem;
+    position: absolute; top: 20px; right: 30px;
+    cursor: pointer; font-weight: bold;">&times;</span>
+  <div id="preview-content"></div>
+</div>
+
+
+  <nav>
+  <div class="logo">WanderScape</div>
+
+  <!-- 🔥 KEEP THIS OUTSIDE .nav-links -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="nav-links">
+    <a href="#home"> Home</a>
+    <a href="#destinations"> Destinations</a>
+    <a href="culture.html"> Culture</a>
+    <a href="#blog"> Blog</a>
+    <a href="#contact"> Contact</a>
+    <a href="#" id="theme-toggle"><i class="fas fa-moon"></i> Theme</a>
+    <input type="text" id="searchInput" placeholder="Search destinations...">
+  </div>
+</nav>
+
+
+  <header class="slideshow-header" id="header">
+  <div class="overlay">
+    <h1 id="main-heading">Colors. Culture. Gujarat.</h1>
+    
+  </div>
+</header>
+
+
+  <section class="section" id="destinations">
+    <h2 data-aos="zoom-in">Top Destinations</h2>
+    <div class="destinations">
+      <p id="no-results" style="text-align:center; font-size: 1.2rem; display: none; margin-top: 2rem; color: crimson;">
+  No destinations found.
+</p>
+
+      <div class="card" data-link="dwarka.html" data-type="video">
+         <video autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3803590975/preview/stock-footage-dwarka-city-temple-aerial-view.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3>Dwarka</h3>
+          <p>“Dwarka – The Eternal City of Lord Krishna, Where Legends Come Alive.”</p>
+          <center><a href="dwarka.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+    
+     <div class="card" data-link="kutchh.html" data-type="video">
+        <video autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3730217899/preview/stock-footage-decorated-camel-cart-running-at-remote-tarmac-road-with-bright-sunrise-sky-video-is-taken-at-dhordo.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3>Kutch</h3>
+          <p>“Witness the White Miracle – Explore the Magical Rann of Kutch.”</p>
+         <center> <a href="kutchh.html" class="explore-btn">Explore More</a></center>
+        </div>
+      </div>
+     
+      <div class="card" data-link="gir.html" data-type="video">
+        <video autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3628425935/preview/stock-footage-lions-drinking-water-in-scroching-summer-heat-at-gir-national-park.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+        <div class="card-content">
+          <h3>Gir National Park</h3>
+          <p>The only place in Asia to see Asiatic Lions in the wild.</p>
+          <p style="color: crimson; font-weight: bold;">Note: Park remains closed from June 16 to October 15 due to monsoon season.</p>
+          <center><a href="gir.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+    
+      <div class="card" data-link="dam.html" data-type="video">
+        <img src="https://specialplacesofindia.com/wp-content/uploads/2024/05/Untitled-design-2024-06-05T200456.307.jpg" alt="Dam">
+        <div class="card-content">
+          <h3>Kamleshwar Dam</h3>
+          <p>Inside Gir forest, known for scenic views and bird watching.</p>
+          <center><a href="dam.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+       <div class="card" data-link="Resort.html" data-type="video">
+          <img src="https://www.holidify.com/images/cmsuploads/compressed/53665678_20221125034237.jpg" alt="Resorts">
+        <div class="card-content">
+          <h3>Best Resorts in sasan gir</h3>
+          <p>“From luxury wellness retreats to budget jungle lodges, Gir has a stay for every explorer. Unwind in the lap of nature with a roar in the background!”</p>
+          <center><a href="Resort.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+  
+      <div class="card" data-link="somnath.html" data-type="video">
+        <video autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3656406431/preview/stock-footage-somnath-gujarat-india-temples-of-lord-shiva-indian-temple-architecture-somnath.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3>Somnath Temple</h3>
+          <p>“Where faith meets the waves — Somnath, the eternal shrine of devotion.”</p>
+          <center><a href="somnath.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+   
+      <div class="card" data-link="diu.html" data-type="video">
+        <video autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3692383579/preview/stock-footage-scenic-view-of-a-rocky-shoreline-with-gentle-waves-under-a-cloudy-sky-at-sunset-the-tranquil.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    
+        <div class="card-content">
+          <h3> Diu Island (Technically a UT, but near Gujarat)</h3>
+          <p>“Where sunshine kisses the sea — escape to Diu.”</p>
+          <center><a href="diu.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+   
+      <div class="card" data-link="pavagadh.html" data-type="video">
+        <video autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/1079876444/preview/stock-footage-drone-shot-of-beautiful-waterfall-on-the-hill-pavagadh-waterfall-also-known-as-kuniya-mahadev.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3> Champaner-Pavagadh Archaeological Park</h3>
+          <p>“Step into a forgotten kingdom — Champaner awaits.”</p>
+          <center><a href="pavagadh.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+    
+      <div class="card" data-link="junagadh.html" data-type="video">
+        <video autoplay muted loop playsinline style="width: 100%; height: 200px; object-fit: cover;">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3798168555/preview/stock-footage-junagadh-city-view-with-mountains-gir-gujarat-aerial-view.webm" type="video/mp4">https://www.shutterstock.com/shutterstock/videos/3656406431/preview/stock-footage-somnath-gujarat-india-temples-of-lord-shiva-indian-temple-architecture-somnath.webm
+        Your browser does not support the video tag.
+      </video>
+        <div class="card-content">
+          <h3>Junagadh – The Ancient City at the Foot of Girnar</h3>
+          <p>“Junagadh – Where mythology meets majestic forts, and every step leads to the divine Girnar.”</p>
+          <center><a href="junagadh.html" class="explore-btn">Explore More</a></center>
+        </div>
+        </div>
+    
+      <!-- Your existing cards go here (same as before, unchanged) -->
+      <!-- Add your destination cards -->
+    </div>
+  </section>
+  
+  <section class="section" id="blog">
+  <h2 data-aos="fade-right">Latest Blog Posts</h2>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <div class="card-content">
+      <h3>Best Time to Visit Gir Forest</h3>
+      <p>
+        Planning a trip to see the majestic Asiatic Lions? Gir Forest National Park remains closed from June 16 to October 15 due to monsoon. The best time to visit is from <strong>December to March</strong>—the weather is pleasant, and lion sightings are frequent. Avoid summer (April-May) unless you're okay with scorching heat. Make sure to book safari permits in advance online or through local hotels.
+      </p>
+      <p><strong>Travel Tip:</strong> Early morning safaris have the best chances of spotting wildlife!</p>
+    </div>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <div class="card-content">
+      <h3>Hidden Gems in Diu</h3>
+      <p>Diu isn’t just about beaches! Explore Naida Caves, Gangeshwar Mahadev Temple, and the Diu Fort. Rent a bike and take a coastal ride during golden hour—it’s a photographer’s paradise. Best time to visit is between <strong>November and February</strong>.</p>
+    </div>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <div class="card-content">
+      <h3>Budget vs. Luxury Stays in Gujarat</h3>
+      <p>From luxury jungle lodges in Gir to budget homestays in Dwarka, Gujarat offers a variety of stay options. Luxury resorts like The Fern in Gir provide top-notch comfort, while budget options near temples or local villages offer authenticity and savings.</p>
+    </div>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <div class="card-content">
+      <h3>Spiritual Serenity in Somnath</h3>
+      <p>The Somnath Temple offers an unmatched spiritual aura. Watch the evening aarti, take a walk along the coast, and absorb the history of one of the twelve jyotirlingas. Best visited during October to March for ideal weather.</p>
+    </div>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <div class="card-content">
+      <h3>White Rann of Kutch - A Moonlit Desert</h3>
+      <p>Visit the Rann Utsav between <strong>November and February</strong> when the salt desert glows under the full moon. From folk dances to camel rides and handicraft bazaars—Kutch is a cultural carnival!</p>
+    </div>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <div class="card-content">
+      <h3>History Comes Alive at Champaner</h3>
+      <p>Step into Gujarat’s only UNESCO World Heritage city. Champaner-Pavagadh offers ancient mosques, stepwells, and views from the Kalika Mata temple. Ideal for history buffs and trekking enthusiasts.</p>
+    </div>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <a class="card" data-aos="flip-left" data-aos-delay="200">
+    <div class="card-content">
+      <h3>Unwind at Kamleshwar Dam</h3>
+      <p>Located in Gir, Kamleshwar Dam is perfect for bird watchers and sunset lovers. Pack a picnic and binoculars. It’s peaceful, scenic, and offers glimpses of crocodiles basking!</p>
+    </div>
+    </a>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 2rem auto;">
+    <div class="card-content">
+      <h3>Junagadh - Gateway to Girnar</h3>
+      <p>Climb 10,000 steps to reach Girnar’s peak! Visit Mahabat Maqbara, Uparkot Fort, and Buddhist caves. October to February is perfect for treks. Don’t forget good walking shoes and water bottles!</p>
+    </div>
+  </div>
+</section>
+
+  <section class="section" id="contact" style="padding: 5rem 1rem; background: linear-gradient(135deg, #2C5364, #203A43, #0F2027); position: relative;">
+  <div 
+    data-aos="zoom-in-up"
+    style="max-width: 700px; margin: auto; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(14px); border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: center; border: 1px solid rgba(255,255,255,0.2); transform-origin: center;">
+    
+    <h2 
+      style="font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 1.5rem; background: linear-gradient(to right, #ff6a00, #ee0979); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Contact Me
+    </h2>
+
+    <p style="font-size: 1.2rem; color: #eee; margin-bottom: 1.5rem;">Have questions or want to connect? I'm just a message away.</p>
+
+    <p class="contact-icon" style="font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem;">
+      <i class="fas fa-envelope"></i> bhavyavyas0009@gmail.com
+    </p>
+
+    <p class="contact-icon" style="font-size: 1.1rem; color: #fff;">
+      <i class="fas fa-phone-alt"></i> +91 95581 13983
+    </p>
+  </div>
+</section>
+
+
+
+
+  <footer>
+    <p>&copy; 2025 WanderScape. All rights reserved.</p>
+  </footer>
+  <script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('show');
+}
+</script>
+<script>
+document.getElementById('theme-toggle').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.body.classList.toggle('dark-theme');
+});
+</script>
+<div id="scroll-progress"></div>
+<script>
+window.addEventListener('scroll', function() {
+  const progress = document.getElementById('scroll-progress');
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (scrollTop / scrollHeight) * 100;
+  progress.style.width = scrolled + "%";
+});
+</script>
+
+<script>
+  const header = document.getElementById("header");
+  const mainHeading = document.getElementById("main-heading");
+
+  const slides = [
+    {
+      image: "images/culture-of-gujarat.jpg",
+      text: "Dwarka – The Sacred City Where the Sea Meets the Divine",
+      bgColor: "rgba(255, 111, 0, 0.6)"
+    },
+    {
+      image: "images/dhari-khodiyar.jpg",
+      text: "Whispers of the Wild – Embrace Nature’s Calm",
+      bgColor: "rgba(0, 150, 136, 0.5)"
+    },
+    {
+      image: "images/gir-forest.jpg",
+      text: "Wild Wonders of Gir Forest",
+      bgColor: "rgba(76, 175, 80, 0.5)"
+    },
+    {
+      image: "images/somnath.jpg",
+      text: "Where the Waves Whisper Stories – Escape to the Seashore",
+      bgColor: "rgba(135, 206, 235, 0.5)"
+    },
+    {
+      image: "images/culture.jpg",
+      text: "Unplug. Wander. Reconnect with the Earth.",
+      bgColor: "rgba(112, 128, 144, 0.5)"
+    }
+  ];
+
+  let index = 0;
+
+  function changeBackground() {
+    const currentSlide = slides[index];
+   header.style.backgroundImage = `url('${currentSlide.image}')`;
+
+    mainHeading.textContent = currentSlide.text;
+    mainHeading.style.backgroundColor = currentSlide.bgColor;
+
+    index = (index + 1) % slides.length;
+  }
+
+  // Initial background
+  changeBackground();
+
+  // ✅ Now safe to define and use toggle button
+  const toggleBtn = document.getElementById('theme-toggle');
+  const icon = toggleBtn.querySelector('i');
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+  });
+
+  // Slideshow interval
+  setInterval(changeBackground, 5000);
+</script>
+
+
+
+
+<script>
+  window.addEventListener('scroll', () => {
+  const scrollProgress = document.getElementById('scroll-progress');
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  scrollProgress.style.width = `${scrollPercent}%`;
+
+});
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+    ScrollTrigger.create({
+  trigger: "#contact",
+  start: "top 80%",
+  once: true,
+  onEnter: () => {
+    confetti({
+      particleCount: 100,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+  }
+});
+  </script>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+  duration: 1000,
+  once: true,
+  offset: 120
+});
+
+
+   gsap.from("nav a", {
+  opacity: 0,
+  y: -20,
+  duration: 1,
+  stagger: 0.2,
+  ease: "back.out(1.7)"
+});
+
+    gsap.registerPlugin(ScrollTrigger);
+   
+    // Animate header text
+    gsap.from("#main-heading", {
+      opacity: 0,
+      y: 50,
+      duration: 1.5,
+      ease: "power3.out"
+    });
+gsap.from("body", {
+  opacity: 0,
+  duration: 1.5,
+  ease: "power2.out"
+});
+
+
+
+    // Animate section titles
+    gsap.utils.toArray(".section h2").forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 1
+      });
+    });
+  </script>
+  <script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('show');
+      const icon = document.querySelector('.menu-icon i');
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-times');
+    });
+  });
+</script>
+
+  <script>
+  document.getElementById("searchInput").addEventListener("keyup", function () {
+    const filter = this.value.toLowerCase();
+    const destinationCards = document.querySelectorAll("#destinations .card");
+
+    let matchFound = false;
+
+    destinationCards.forEach(card => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      if (title.includes(filter)) {
+        card.style.display = "block";
+        card.style.visibility = "visible";
+        card.style.position = "relative";
+        matchFound = true;
+      } else {
+        card.style.visibility = "hidden";
+        card.style.position = "absolute";
+      }
+    });
+
+    // Optional fallback message (if no match)
+    if (!matchFound) {
+      document.getElementById("no-results").style.display = "block";
+    } else {
+      document.getElementById("no-results").style.display = "none";
+    }
+  });
+</script>
+
+
+
+  <div id="scroll-progress"></div>
+  <script>
+document.getElementById('searchInput').addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  const cards = document.querySelectorAll('.destinations .card');
+  let anyVisible = false;
+
+  cards.forEach(card => {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    if (title.includes(query)) {
+      card.style.display = 'block';
+      anyVisible = true;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  document.getElementById('no-results').style.display = anyVisible ? 'none' : 'block';
+});
+</script>
+
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const previewModal = document.getElementById('preview-modal');
+  const previewContent = document.getElementById('preview-content');
+
+  let clickTimeout;
+
+  function closePreview() {
+    previewModal.style.display = 'none';
+    previewContent.innerHTML = '';
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', function () {
+      clearTimeout(clickTimeout);
+      clickTimeout = setTimeout(() => {
+        const video = this.querySelector('video');
+        const img = this.querySelector('img');
+
+        previewContent.innerHTML = '';
+        if (video) {
+          const clone = video.cloneNode(true);
+          clone.controls = true;
+          clone.style.maxWidth = '90vw';
+          clone.style.maxHeight = '80vh';
+          clone.play();
+          previewContent.appendChild(clone);
+        } else if (img) {
+          const clone = img.cloneNode(true);
+          clone.style.maxWidth = '90vw';
+          clone.style.maxHeight = '80vh';
+          previewContent.appendChild(clone);
+        }
+
+        previewModal.style.display = 'flex';
+      }, 250); // Delay to distinguish single vs double click
+    });
+
+    card.addEventListener('dblclick', function () {
+      clearTimeout(clickTimeout);
+      const link = this.getAttribute('data-link');
+      if (link) {
+        window.location.href = link;
+      }
+    });
+  });
+  
+</script>
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const icon = document.querySelector('.menu-icon i');
+    
+    navLinks.classList.toggle('show');
+
+    // Toggle icon between bars and close (hamburger ↔ X)
+    if (navLinks.classList.contains('show')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  }
+</script>
+
+
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggle.textContent = '☀️';
+} else {
+    themeToggle.textContent = '🌙';
+}
+
+// Toggle theme on click
+themeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙';
+    }
+});
+</script>
+
+
+
+</body>
+</html>

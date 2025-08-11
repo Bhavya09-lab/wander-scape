@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gir – Gujarat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    @media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding: 0 1rem;
+  }
+
+  header img,
+  .full-width-image video {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .full-width-image p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  .attraction img {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin: 1rem 0;
+  }
+
+  .attraction {
+    padding: 1rem;
+  }
+
+  iframe {
+    border-radius: 30px !important;
+  }
+}
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+      background: linear-gradient(270deg, #e0f7fa, #fff8e1, #f3e5f5);
+      background-size: 600% 600%;
+      animation: gradientFlow 15s ease infinite;
+      position: relative;
+    }
+    .popular-song {
+  background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+  border-radius: 30px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+header {
+      background: linear-gradient(to right, #014421, #29AB87, #DDE9C3);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      animation: slideInTop 1s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    @keyframes slideInTop {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header img {
+      width: 60%;
+      border-radius: 70px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+.popular-song:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.song-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2a5d84;
+  margin-bottom: 0.3rem;
+}
+
+.song-artist {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.listen-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a22974;
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.listen-button:hover {
+  background-color: #2a468eeb;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .full-width-image img {
+      width: 80%;
+      border-radius: 75px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .full-width-image img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+      cursor: zoom-in;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #fff;
+      background-color: #2a5d84;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #184d6b;
+    }
+
+    .map-button {
+      background: #e36d60;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .map-button:hover {
+      background: #c0554b;
+      color: #2a5d84;
+    }
+
+    h2 {
+      margin-top: 3rem;
+      color: #222;
+      text-align: center;
+    }
+
+    .attraction {
+      margin-bottom: 2.5rem;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 1.5rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .attraction:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .attraction h3 {
+      margin-bottom: 0.5rem;
+      color: #2a5d84;
+    }
+
+    .attraction img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      float: left;
+      margin-right: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+   
+
+.popular-song {
+  background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+  border-radius: 30px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-song:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.song-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2a5d84;
+  margin-bottom: 0.3rem;
+}
+
+.song-artist {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.listen-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2a5d84;
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.listen-button:hover {
+  background-color: #184d6b;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+    .attraction:hover img {
+      transform: scale(1.05);
+      cursor: zoom-in;
+    }
+
+    .attraction::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    padding: 0 0.5rem;
+  }
+
+  .full-width-image video {
+    width: 90% !important;
+    height: auto !important;
+    border-radius: 20px !important;
+  }
+
+  .full-width-image p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  .attraction img {
+    width: 100% !important;
+    height: auto !important;
+    float: none;
+    margin: 1rem 0;
+  }
+
+  .attraction {
+    padding: 1rem;
+  }
+
+  iframe {
+    border-radius: 20px !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <center>
+  <div class="responsive-header">
+  <header>
+    <h1>"Into the Wild – Explore Gir's Untamed Beauty"</h1>
+    <div class="full-width-image">
+      <video autoplay muted loop playsinline>
+        <source src="https://www.shutterstock.com/shutterstock/videos/3671870563/preview/stock-footage-slow-moiton-close-up-view-of-two-lions-drinking-water-at-the-edge-of-a-river-bank.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>"Where the Lions Roam – Welcome to Gir"</p>
+    </div>
+  </header>
+</div>
+
+</center>
+
+  <h2>Major attractions include:</h2>
+
+  <div class="attraction">
+    <h3>Kankai Mata Temple</h3>
+    <img src="https://www.devfarmsasangir.com/wp-content/uploads/2023/09/attraction-7.jpg" alt="Kankai mata temple">
+    <p>A sacred Hindu temple dedicated to Goddess Kankai, located deep inside the Gir forest. It’s an important spiritual site for locals and a peaceful escape for nature lovers.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/5RB9o4deXCctPoST9" target="_blank">Google Map</a>
+  </div>
+
+  <div class="attraction">
+    <h3>Devaliya Safari Park</h3>
+    <img src="https://www.girnationalpark.in/uploads/image-5.png" alt="Devaliya">
+    <p>A fenced area within Gir for a quick and safe wildlife experience. It's ideal for those with limited time. You can easily spot lions, deer, leopards, and peacocks here without a full forest safari.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/TyezH92X7Z41fQy89" target="_blank">Google Map</a>
+  </div>
+
+  <div class="attraction">
+    <h3>Sasan Gir Village</h3>
+    <img src="https://assets.zeezest.com/images/PROD_10_1643791807548.jpg" alt="Village">
+    <p>The central village that acts as the entry point for Gir safaris. You’ll find many resorts, local craft shops, and guides here. It’s a great place to explore the local culture and cuisine of the Maldhari and Siddhi communities.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/UGAjymXyLvf432vbA" target="_blank">Google Map</a>
+  </div>
+
+  <div class="attraction">
+    <h3>Khodiyar Maa Temple, Galdhara Dhari</h3>
+    <img src="https://www.yourvacationtrip.com/wp-content/uploads/2023/11/Dhari-Galdhara-Khodiyar-Mandir.png" alt="Khodiyar maa temple">
+    <p>Located in Dhari town near Gir, this serene hilltop temple is dedicated to Khodiyar Mata, a revered deity of Gujarat. The temple is known for its panoramic views, natural springs, and peaceful environment that attracts devotees and trekkers alike.</p>
+    <a class="map-button" href="https://maps.app.goo.gl/Mn6iLSV2qd1LLedh8" target="_blank">Google Map</a>
+  </div>
+<section class="section" id="gir">
+  <h2 data-aos="fade-up"><center>Culture & Traditions of Gir</center></h2>
+
+  <!-- Embedded YouTube video -->
+  <div style="
+  max-width: 400px;
+  aspect-ratio: 9/16;
+  margin: 0 auto 2rem auto;
+  border-radius: 75px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+">
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/mSSx45VIUnc"
+    title="YouTube Shorts"
+    frameborder="0"
+    style="border: none;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+  <!-- Culture description -->
+  <div class="card" style="max-width: 900px; margin: 2rem auto;" data-aos="fade-up" data-aos-delay="200">
+    <div class="card-content">
+      <h3>Spiritual Essence</h3>
+      <p>1. Sacred Coexistence with Nature:
+Gir Forest is not just a wildlife sanctuary; it is a sacred landscape where nature and spirituality blend.
+Locals believe that the forest is a divine creation and treat its wildlife, especially lions, with reverence and respect, as manifestations of divine strength.
+Maldhari tribes, who live inside the forest, practice eco-spirituality—living in harmony with the environment and treating nature as a guardian spirit.
+</p>
+<p>2. Mythological and Religious Importance
+Kankai Mata Temple: Located deep inside Gir Forest, this temple is dedicated to Goddess Kankeshwari (Kankai Mata), the protector of the forest and its people.
+Devotees and even forest officers consider her blessings crucial for safety.
+Banej Mahadev Temple: A secluded Shiva temple, believed to be a place where Lord Krishna worshipped Lord Shiva.
+It attracts pilgrims who believe it is a spot of spiritual energy and divine vibrations.</p>
+
+      <h3>Festivals</h3>
+      <div class="attraction">
+    <img src="https://www.girnationalpark.in/uploads/kankai-temple.jpg" alt="gir">
+    <div>
+      <p> Kankai Mata Utsav:
+Where: Kankai Mata Temple (deep inside Gir Forest)
+When: During Navratri (September–October) and also on local full moon days
+What:Devotees from nearby villages visit the temple on foot
+Aarti, bhajan-kirtan, and folk rituals are performed
+Local Maldharis offer coconuts and sweets to the goddess
+Why: Kankai Mata is considered the protector of Gir Forest and its people
+</p>
+    </div>
+      </div>
+      <h3>Local Customs</h3>
+      <p>1.Respect and Coexistence with Lions:
+Custom: Locals treat the Asiatic lions not as threats, but as divine beings and part of their ecosystem.
+Belief: Spotting a lion is considered auspicious, and harming wildlife is taboo.
+Practice: Maldharis often say, “Sher hamara rakshak hai” (The lion is our protector).</p>
+<p>
+2. Maldhari Tribal Lifestyle
+Who: Semi-nomadic herders living inside the forest
+Customs:Live in traditional nes (mud huts) inside the forest
+Follow oral traditions of storytelling, songs, and spiritual chants
+Deeply eco-spiritual, treating forests, rivers, and animals as sacred
+</p>
+
+<div style="margin-top: 1rem; text-align: center;">
+  <h3 style="color: #2a5d84;">🎵 Popular Songs for Gir</h3>
+
+  <div class="popular-song">
+    <div class="song-title">🎧 Gir Gajavati Aavi Sihan</div>
+    <div class="song-artist">Artist: Aditya Gadhavi</div>
+    <p>Genre: Gujarati Folk</p>
+    <a href="https://www.youtube.com/watch?v=nKff_1dNcBM" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+
+  <div class="popular-song">
+    <div class="song-title">🎶 Saibo Re Govaliyo Maro</div>
+    <div class="song-artist">Artist: Aditya Gadhavi</div>
+    <p>Genre: Gujarati Folk</p>
+    <a href="https://www.jiosaavn.com/song/saybo-re-govaliyo/LzkuXQ5mAmw" target="_blank" class="listen-button">▶ Listen Now</a>
+  </div>
+</div>
+
+
+</section>
+  <a href="index.html">← Back to Main Page</a>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>“Gujarat’s Festivals: A Tapestry of Traditions”</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f0f8ff, #e6f2ff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #005f73, #0a9396);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      animation: slideInTop 1s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes slideInTop {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header img {
+      width: 60%;
+      border-radius: 70px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .attraction {
+       background: #f0f8ff;
+      border-radius: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      overflow: hidden;
+      animation: slideFade 1s ease-in-out;
+      position: relative;
+    }
+
+    @keyframes slideFade {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .attraction::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      animation: shine 2s infinite;
+      z-index: 0;
+    }
+
+    @keyframes shine {
+      100% { left: 100%; }
+    }
+
+    .attraction:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .attraction img {
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      border-radius:60px;
+    }
+
+    .attraction:hover img {
+      transform: scale(1.1) rotate(1deg);
+    }
+
+    .attraction-content {
+      flex: 1;
+      padding: 2rem;
+      min-width: 280px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      color: #003973;
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    a {
+      display: inline-block;
+      margin: 2rem;
+      color: white;
+      background: #003973;
+      padding: 0.8rem 1.6rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.4s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+      background: #001f4d;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .attraction {
+        flex-direction: column;
+      }
+
+      header img {
+        width: 100%;
+      }
+    }
+  </style>
+  <style>
+  /* Existing styles remain... */
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    header video {
+  width: 50%;
+  height: 350px;
+  border-radius: 500px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+@media (max-width: 1024px) {
+  header video {
+    width: 80%;
+    height: auto;
+    border-radius: 75px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  header video {
+    width: 100%;
+    height: auto;
+    border-radius: 75px;
+  }
+}
+
+    section {
+      padding: 2rem 1rem;
+    }
+
+    .attraction img {
+      max-width: 300px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    header img,
+    header video {
+      width: 100%;
+      height: auto;
+      border-radius: 40px;
+    }
+
+    .attraction {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .attraction img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 30px;
+    }
+
+    .attraction-content {
+      padding: 1rem;
+    }
+
+    a {
+      margin: 1rem auto;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    a {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <header>
+    <h1>“From Garba to Kites: The Festivals That Define Gujarat”</h1>
+    <video autoplay muted loop playsinline>
+  <source src="https://www.shutterstock.com/shutterstock/videos/1105488869/preview/stock-footage-vadodara-gujarat-india-fpv-drone-shot-of-navratri-festival.webm" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+    <p>Gujarat’s festivals are a vibrant reflection of its rich cultural heritage, spiritual devotion, and community spirit. From the energetic Garba of Navratri to the colorful skies of Uttarayan, and the lights of Diwali to the spiritual fervor of Janmashtami and Rath Yatra, every celebration brings people together in joy, music, dance, and tradition. These festivals showcase the state’s deep-rooted values, diversity, and love for celebration.</p>
+  </header>
+
+  <section>
+    <div class="attraction">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Shardiya_Navratri_Festival_in_Pune_2020.jpg" alt="Navratri" />
+      <div class="attraction-content">
+        <h2>Navratri</h2>
+        <p>Navratri is Gujarat’s most iconic celebration, marked by nine nights of Garba and Dandiya Raas in honor of Goddess Durga. Cities come alive with vibrant traditional attire, music, and devotion.</p>
+      </div>
+    </div>
+
+    <div class="attraction">
+      <img src="https://imvoyager.com/wp-content/uploads/2020/01/IMG_20200107_111413.jpg" alt="utarayan" />
+      <div class="attraction-content">
+        <h2> Uttarayan (Makar Sankranti)</h2>
+        <p>Celebrated on January 14th, Uttarayan fills the skies with colorful kites. It's a joyful harvest festival where people gather on rooftops, fly kites, and enjoy sweets like chikki and laddoos.</p>
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://i.natgeofe.com/n/7e33fdf8-c549-4cc6-99c2-a66bf6cad079/GettyImages-1778646120.jpg" alt="Diwali" />
+      <div class="attraction-content">
+        <h2> Diwali-The Festival of Lights</h2>
+        <p>Diwali is celebrated with great enthusiasm across Gujarat. Homes are lit with diyas and decorated with rangoli as families worship Goddess Lakshmi and celebrate the triumph of light over darkness.</p>
+        
+      </div>
+    </div>
+    <div class="attraction">
+      <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201807/rath_yatra.png?size=1200:675" alt="rathyatra" />
+      <div class="attraction-content">
+        <h2> Rath Yatra-The Chariot Festival of Jagannath</h2>
+        <p>Held in Ahmedabad,Bhavnagar Rath Yatra involves grand processions of Lord Jagannath, Balabhadra, and Subhadra through city streets. It draws thousands of devotees every year.</p>
+      </div>
+    </div>
+
+    <div class="attraction">
+      <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/fairs-&-festivals/tarnetar-fair/Tarnetar-Fair-Banner.jpg" alt="taranetar" />
+      <div class="attraction-content">
+        <h2>Tarnetar Fair-A Traditional Marriage Fair</h2>
+        <p>Tarnetar Fair is a cultural festival rooted in tribal matchmaking traditions. It features folk dances, music, traditional costumes, and local handicrafts, attracting visitors from across India.</p>
+      
+    
+      </div>
+    </div>
+    
+  </section>
+  
+      
+
+
+
+</section>
+<center><div><h1>Local custom</h1>
+    <a href="https://open.spotify.com/track/2mOPMDdb3mEUY56LWMEGWy" target="_blank" 
+     style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; border-radius: 6px; font-weight: bold; text-decoration: none;">
+    🎧 Listen to "Taranetar no melo jamyo..."
+  </a>
+</div></center>
+
+  <a href="index.html">← Back to Main Page</a>
+ 
+
+</body>
+</html>
